@@ -1,0 +1,24 @@
+#hamburger-icon {
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  #hamburger-icon div {
+    width: 30px; /* Width of the bars */
+    height: 3px; /* Height of the bars */
+    background-color: #333; /* Color of the bars */
+    margin: 6px 0; /* Spacing between the bars */
+    transition: 0.4s; /* Animation transition */
+  }
+  #hamburger-icon.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  #hamburger-icon.open div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #hamburger-icon.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
