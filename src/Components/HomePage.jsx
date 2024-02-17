@@ -75,15 +75,33 @@ const HomePage = () => {
         >
           <div className="carousel-slide">
             <img src={satellite} alt="Image 1" />
-            <div className="img-text">Text for Image 1</div>
+            <div className="img-text-container">
+              <h3 className="img-text">Text for Image 1</h3>
+              <p className="img-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
           <div className="carousel-slide">
             <img src={servers} alt="Image 2" />
-            <div className="img-text">Text for Image 2</div>
+            <div className="img-text-container">
+              <h3 className="img-text">Text for Image 2</h3>
+              <p className="img-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>{" "}
           </div>
           <div className="carousel-slide">
             <img src={motherboard} alt="Image 3" />
-            <div className="img-text">Text for Image 3</div>
+            <div className="img-text-container">
+              <h3 className="img-text">Text for Image 3</h3>
+              <p className="img-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>{" "}
           </div>
         </div>
         <button className="prev" onClick={() => moveSlide(-1)}>
