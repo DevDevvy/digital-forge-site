@@ -6,28 +6,47 @@
   background-color: #f5f5f5;
 }
 
-#digitalforge {
-  font-size: 1.2em;
-  margin-top: 1em;
-  /* send to the left of screen */
-  position: absolute;
-  left: 1em;
-  top: 0.1em;
-  margin-bottom: 1em;
+#content-container {
+  transition: filter 0.8s ease;
 }
+#content-container.open {
+  filter: blur(5px);
+}
+
+#digitalforge {
+  font-size: 5px;
+  margin-top: 1em;
+  position: fixed;
+  right: 4.5em;
+  top: 5.5em;
+  margin-bottom: 1em;
+  transition: 0.2s;
+}
+
+#digitalforge.open {
+  color: #9b0f0f;
+  margin-top: 1em;
+  position: fixed;
+  right: 6.5em;
+  top: 1.5em;
+  font-size: 10px;
+  transition: 0.7s ease-in-out;
+}
+
 #hamburger-icon {
   cursor: pointer;
   display: block;
   position: fixed;
   right: 1.3em;
   top: 1.3em;
+  z-index: 1000;
 }
 
 #hamburger-icon div {
   width: 30px; /* Width of the bars */
   height: 3px; /* Height of the bars */
   background-color: #333; /* Color of the bars */
-  margin: 6px 0; /* Spacing between the bars */
+  margin: 8px 0; /* Spacing between the bars */
   transition: 0.4s; /* Animation transition */
 }
 #hamburger-icon.open div:nth-child(1) {
@@ -106,6 +125,13 @@
 }
 .next {
   right: 0;
+}
+
+#cta {
+  margin: 0.3em;
+  padding: 0.3em;
+  width: 50%;
+  text-align: center;
 }
 
 .contact-form {
