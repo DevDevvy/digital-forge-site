@@ -7,7 +7,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import "./HomePage.css";
-import DFLogo from "../assets/DF-Logo.png";
 import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
 import satellite from "../assets/satellite.jpg";
@@ -60,106 +59,121 @@ const HomePage = () => {
 
   return (
     <>
-      <div id="hamburger-icon" onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div className="carousel">
-        <div
-          className="carousel-slides"
-          style={{
-            transform: `translateX(-${slideIndex * 100}%)`,
-            transition: "transform 0.5s ease",
-          }}
-        >
-          <div className="carousel-slide">
-            <img src={satellite} alt="Image 1" />
-            <div className="img-text-container">
-              <h3 className="img-text">Text for Image 1</h3>
-              <p className="img-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+      <div id="page-container">
+        <div id="hamburger-icon" onClick={toggleMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1 id="digitalforge">Digital Forge</h1>
+        <div className="carousel">
+          <div
+            className="carousel-slides"
+            style={{
+              transform: `translateX(-${slideIndex * 100}%)`,
+              transition: "transform 0.5s ease",
+            }}
+          >
+            <div className="carousel-slide">
+              <img src={satellite} alt="Image 1" />
+              <div className="img-text-container">
+                <h3 className="img-text">Text for Image 1</h3>
+                <p className="img-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+            <div className="carousel-slide">
+              <img src={servers} alt="Image 2" />
+              <div className="img-text-container">
+                <h3 className="img-text">Text for Image 2</h3>
+                <p className="img-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>{" "}
+            </div>
+            <div className="carousel-slide">
+              <img src={motherboard} alt="Image 3" />
+              <div className="img-text-container">
+                <h3 className="img-text">Text for Image 3</h3>
+                <p className="img-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>{" "}
             </div>
           </div>
-          <div className="carousel-slide">
-            <img src={servers} alt="Image 2" />
-            <div className="img-text-container">
-              <h3 className="img-text">Text for Image 2</h3>
-              <p className="img-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>{" "}
-          </div>
-          <div className="carousel-slide">
-            <img src={motherboard} alt="Image 3" />
-            <div className="img-text-container">
-              <h3 className="img-text">Text for Image 3</h3>
-              <p className="img-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>{" "}
-          </div>
-        </div>
-        <button className="prev" onClick={() => moveSlide(-1)}>
-          &#10094;
-        </button>
-        <button className="next" onClick={() => moveSlide(1)}>
-          &#10095;
-        </button>
-      </div>
-      <div className="contact-form">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">Your Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-              style={{ resize: "none" }}
-            ></textarea>
-          </div>
-          <button id="homePageSubmitButton" type="submit">
-            Submit
+          <button className="prev" onClick={() => moveSlide(-1)}>
+            &#10094;
           </button>
-        </form>
+          <button className="next" onClick={() => moveSlide(1)}>
+            &#10095;
+          </button>
+        </div>
+        <div className="contact-form">
+          <form onSubmit={handleSubmit}>
+            <div className="form-div">
+              <label htmlFor="email">Your Email:</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-div">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-div">
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+                style={{ resize: "none" }}
+              ></textarea>
+            </div>
+            <button id="homePageSubmitButton" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+        {/* Footer with legal links */}
+        <footer id="footer">
+          <a
+            href="/terms"
+            aria-label="Terms and conditions"
+            className="footer-links"
+          >
+            Terms and Conditions
+          </a>
+          <a
+            href="/privacy"
+            aria-label="Privacy policy"
+            className="footer-links"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/accessibility"
+            aria-label="Our Commitment to Accessibility"
+            className="footer-links"
+          >
+            Our Commitment to Accessibility
+          </a>
+        </footer>
       </div>
-      {/* Footer with legal links */}
-      <footer id="footer">
-        <a href="/terms" aria-label="Terms and conditions">
-          Terms and Conditions
-        </a>
-        <a href="/privacy" aria-label="Privacy policy">
-          Privacy Policy
-        </a>
-        <a href="/accessibility" aria-label="Our Commitment to Accessibility">
-          Our Commitment to Accessibility
-        </a>
-      </footer>
     </>
   );
 };

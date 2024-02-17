@@ -1,6 +1,26 @@
+#page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+#digitalforge {
+  font-size: 1.2em;
+  margin-top: 1em;
+  /* send to the left of screen */
+  position: absolute;
+  left: 1em;
+  top: 0.1em;
+  margin-bottom: 1em;
+}
 #hamburger-icon {
   cursor: pointer;
-  display: inline-block;
+  display: block;
+  position: fixed;
+  right: 1.3em;
+  top: 1.3em;
 }
 
 #hamburger-icon div {
@@ -27,6 +47,10 @@
   max-width: 600px; /* Adjust based on your needs */
   margin: auto;
   overflow: hidden;
+  box-shadow: 2px 9px 17px 2px;
+  border-radius: 10px;
+  margin-top: 5em;
+  margin-bottom: 3em;
 }
 
 .carousel-slides {
@@ -36,10 +60,13 @@
 .carousel-slide {
   min-width: 100%; /* Ensure each slide takes up full container width */
   transition: transform 0.5s ease;
+  position: relative;
+  text-align: center;
 }
 
 .carousel-slide img {
   width: 100%; /* Make images stretch to cover the slide */
+  height: 100%;
   vertical-align: middle;
 }
 
@@ -53,7 +80,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 24px;
+  font-size: 3vw;
   text-align: center;
 }
 .img-text {
@@ -81,13 +108,15 @@
   right: 0;
 }
 
-.contact-form form {
+.contact-form {
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 8px 15px 38px #bebebe;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  margin: auto;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
 }
 
 .contact-form label {
@@ -98,10 +127,18 @@
 .contact-form input[type="text"],
 .contact-form textarea {
   padding: 8px;
-  margin-bottom: 10px;
+  margin: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
+  width: auto;
+  box-shadow: inset 2px 3px 5px #bebebe;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-form button {
@@ -111,6 +148,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%;
 }
 
 .contact-form button:hover {
@@ -121,7 +159,7 @@
   text-align: center;
   padding: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 input,
@@ -144,4 +182,11 @@ label {
   box-shadow: 10px 10px 12px grey;
   border: 0.75rem;
   cursor: pointer;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
 }
