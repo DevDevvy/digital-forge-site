@@ -8,9 +8,13 @@
 
 #content-container {
   transition: filter 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #content-container.open {
-  filter: blur(5px);
+  filter: blur(3px);
 }
 
 #digitalforge {
@@ -21,6 +25,7 @@
   top: 5.5em;
   margin-bottom: 1em;
   transition: 0.2s;
+  z-index: 500;
 }
 
 #digitalforge.open {
