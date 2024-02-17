@@ -4,22 +4,31 @@
 // Send email on submit of contact form
 // Add images and whatnot to carousel
 // Reset interval for auto-scrolling when user interacts with carousel
-// Set Hamburger icon to top right of page
-// Add legal links to bottom of page
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./HomePage.css";
+import DFLogo from "../assets/DF-Logo.png";
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const totalSlides = 3; // Assuming you have 3 slides, adjust accordingly
+  const slideIntervalTime = 4500; // Slide interval time in milliseconds
+
+  let slideInterval = useRef(null);
+
+  const autoScroll = () => {
+    clearInterval(slideInterval.current); // Clear existing interval
+    slideInterval.current = setInterval(() => {
+      console.log(
+        `Auto-scrolling to the next slide: ${new Date().toLocaleTimeString()}`
+      );
+      setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+    }, slideIntervalTime);
+  };
 
   useEffect(() => {
-    const autoScroll = setInterval(() => {
-      setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-    }, 3000); // Adjust time for your needs
-
-    return () => clearInterval(autoScroll); // Cleanup interval on component unmount
+    autoScroll(); // Initialize auto-scrolling on component mount
+    return () => clearInterval(slideInterval.current); // Cleanup on component unmount
   }, [totalSlides]);
 
   function toggleMenu() {
@@ -32,6 +41,7 @@ const HomePage = () => {
     if (newIndex >= totalSlides) newIndex = 0;
     if (newIndex < 0) newIndex = totalSlides - 1;
     setSlideIndex(newIndex);
+    autoScroll(); // Reset the auto-scroll interval
   };
 
   const [email, setEmail] = useState("");
@@ -61,7 +71,7 @@ const HomePage = () => {
           }}
         >
           <div className="carousel-slide">
-            <img src="image1.jpg" alt="Image 1" />
+            <img src={DFLogo} alt="Image 1" />
             <p>Text for Image 1</p>
           </div>
           <div className="carousel-slide">
