@@ -1,3 +1,12 @@
+// TODO: Home page styling
+// Update styling for page layout
+// Add pay link to hamburger icon
+// Send email on submit of contact form
+// Add images and whatnot to carousel
+// Reset interval for auto-scrolling when user interacts with carousel
+// Set Hamburger icon to top right of page
+// Add legal links to bottom of page
+
 import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 
@@ -100,11 +109,26 @@ const HomePage = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
+              style={{ resize: "none" }}
             ></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button id="homePageSubmitButton" type="submit">
+            Submit
+          </button>
         </form>
       </div>
+      {/* Footer with legal links */}
+      <footer id="footer">
+        <a href="/terms" aria-label="Terms and conditions">
+          Terms and Conditions
+        </a>
+        <a href="/privacy" aria-label="Privacy policy">
+          Privacy Policy
+        </a>
+        <a href="/accessibility" aria-label="Our Commitment to Accessibility">
+          Our Commitment to Accessibility
+        </a>
+      </footer>
     </>
   );
 };
