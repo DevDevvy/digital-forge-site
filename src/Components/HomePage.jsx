@@ -8,6 +8,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./HomePage.css";
 import DFLogo from "../assets/DF-Logo.png";
+import motherboard from "../assets/motherboard.jpg";
+import servers from "../assets/servers.jpg";
+import satellite from "../assets/satellite.jpg";
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -71,16 +74,16 @@ const HomePage = () => {
           }}
         >
           <div className="carousel-slide">
-            <img src={DFLogo} alt="Image 1" />
-            <p>Text for Image 1</p>
+            <img src={satellite} alt="Image 1" />
+            <div className="img-text">Text for Image 1</div>
           </div>
           <div className="carousel-slide">
-            <img src="image2.jpg" alt="Image 2" />
-            <p>Text for Image 2</p>
+            <img src={servers} alt="Image 2" />
+            <div className="img-text">Text for Image 2</div>
           </div>
           <div className="carousel-slide">
-            <img src="image3.jpg" alt="Image 3" />
-            <p>Text for Image 3</p>
+            <img src={motherboard} alt="Image 3" />
+            <div className="img-text">Text for Image 3</div>
           </div>
         </div>
         <button className="prev" onClick={() => moveSlide(-1)}>
