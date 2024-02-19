@@ -24,7 +24,7 @@
 
 #digitalforge {
   font-size: 5px;
-  margin-top: 1em;
+  margin-top: 0.1em;
   position: fixed;
   right: 4.5em;
   top: 5.5em;
@@ -56,7 +56,7 @@
   width: 30px; /* Width of the bars */
   height: 3px; /* Height of the bars */
   background-color: #333; /* Color of the bars */
-  margin: 8px 0; /* Spacing between the bars */
+  margin: 5px 0; /* Spacing between the bars */
   transition: 0.6s; /* Animation transition */
 }
 #hamburger-icon.open div:nth-child(1) {
@@ -109,7 +109,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 3vw;
+  font-size: 3vmin;
   text-align: center;
 }
 .img-text {
@@ -223,6 +223,6 @@ label {
 .footer-links {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  /* width: 100%; */
   padding: 0 20px;
 }
