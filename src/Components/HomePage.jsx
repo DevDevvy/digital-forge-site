@@ -36,8 +36,13 @@ const HomePage = () => {
   function toggleMenu() {
     const icon = document.getElementById("hamburger-icon");
     const digitalforge = document.getElementById("digitalforge");
+    const navIcons = document.getElementsByClassName("nav");
     const contentContainer = document.getElementById("content-container");
     icon.classList.toggle("open");
+    for (let i = 0; i < navIcons.length; i++) {
+      navIcons[i].classList.toggle("open");
+    }
+
     contentContainer.classList.toggle("open");
     digitalforge.classList.toggle("open");
   }
@@ -70,6 +75,17 @@ const HomePage = () => {
           <div></div>
         </div>
         <h1 id="digitalforge">Digital Forge</h1>
+        <div id="nav-menu-container">
+          <nav id="nav-home" className="nav">
+            Home
+          </nav>
+          <nav id="nav-about" className="nav">
+            About
+          </nav>
+          <nav id="nav-pay" className="nav">
+            Pay Link
+          </nav>
+        </div>
         <div id="content-container">
           <div className="carousel">
             <div
@@ -155,7 +171,7 @@ const HomePage = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
-                  style={{ resize: "none" }}
+                  // style={{ resize: "none" }}
                 ></textarea>
               </div>
               <button id="homePageSubmitButton" type="submit">

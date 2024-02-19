@@ -71,6 +71,58 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
+.nav {
+  display: none;
+  color: rgb(176, 18, 18);
+  transition: 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  top: 1.5em; /* Adjust as needed */
+  right: 1.5em; /* Adjust as needed */
+  transition: top 0.8s ease; /* Slide animation for menu container */
+  right: -200px; /* Initial position off-screen */
+  background-color: #f8f490bc;
+  padding: 0 1em;
+  width: 4em;
+  text-align: center;
+}
+
+.nav:hover {
+  cursor: pointer;
+  color: #d3eb37;
+  background-color: #3b151590;
+  transition: 0.5s ease;
+}
+
+#nav-home.open {
+  display: block;
+  margin-top: 2em;
+  position: fixed;
+  right: 1.5em;
+  top: 1.5em;
+  font-size: 2em;
+}
+
+#nav-about.open {
+  display: block;
+  margin-top: 2em;
+  position: fixed;
+  right: 1.5em;
+  top: 3em;
+  font-size: 2em;
+}
+#nav-pay.open {
+  display: block;
+  margin-top: 2em;
+  position: fixed;
+  right: 1.5em;
+  top: 4.5em;
+  font-size: 2em;
+}
+
 .carousel {
   position: relative;
   max-width: 600px; /* Adjust based on your needs */
@@ -153,6 +205,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 1em;
+  width: 25vh;
 }
 
 .contact-form label {
@@ -166,7 +219,7 @@
   margin: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: auto;
+  width: 100%;
   box-shadow: inset 2px 3px 5px #bebebe;
 }
 
@@ -175,6 +228,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .contact-form button {
@@ -189,6 +243,12 @@
 
 .contact-form button:hover {
   background-color: #0056b3;
+}
+
+#message {
+  resize: none;
+  height: 100px;
+  width: 100%;
 }
 
 #footer {
