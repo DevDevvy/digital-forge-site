@@ -169,20 +169,41 @@
 
 .img-text-container {
   position: absolute;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   width: 100%;
   height: auto;
-  padding: 1em;
+  /* padding: 1em; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 3vmin;
-  text-align: center;
+  font-size: 1.3em;
+  /* text-align: center; */
 }
 .img-text {
-  margin: 1.5em;
+  /* margin: 1.5em; */
   z-index: 100;
+}
+
+.photo-text-list {
+  list-style: none; /* Remove default list style */
+  padding-left: 0; /* Remove default padding */
+  text-align: center; /* Align text to the left */
+}
+.photo-text-list:before {
+  content: url("../assets/hammer-icon.svg"); /* Add custom icon */
+  display: inline-block;
+  width: 20px; /* Adjust icon size as needed */
+  height: 20px;
+  margin-right: 5px; /* Add space between icon and text */
+}
+
+ul {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
 }
 
 .prev,

@@ -106,10 +106,26 @@ const HomePage = () => {
                     Infrastructure and Cloud Services
                   </h3>
                   <p className="img-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Specializing in AWS, we provide scalable, secure, and
+                    reliable solutions tailored to meet your unique business
+                    needs.
                   </p>
+                  <ul>
+                    <li className="photo-text-list">
+                      Optimized Performance for Infrastructure
+                    </li>
+                    <li className="photo-text-list">
+                      Built for Reliability and Scalability
+                    </li>
+                    <li className="photo-text-list">
+                      AWS Certified Solutions Architects
+                    </li>
+                    <li className="photo-text-list">
+                      Industry Standard Cloud Security
+                    </li>
+                    <li className="photo-text-list">Infrastructure as Code</li>
+                    <li className="photo-text-list">Cloud Migration</li>
+                  </ul>
                 </div>
               </div>
               <div className="carousel-slide">
@@ -117,10 +133,21 @@ const HomePage = () => {
                 <div className="img-text-container">
                   <h3 className="img-text">Networking and Communications</h3>
                   <p className="img-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Comprehensive networking and communications setup solutions.
                   </p>
+                  <ul>
+                    <li className="photo-text-list">
+                      Network Design and Implementation
+                    </li>
+                    <li className="photo-text-list">
+                      Network Security and Monitoring
+                    </li>
+                    <li className="photo-text-list">
+                      Private to Enterprise Level
+                      <li className="photo-text-list">Wireless Networking</li>
+                    </li>
+                    <li className="photo-text-list">VoIP and Telephony</li>
+                  </ul>
                 </div>{" "}
               </div>
               <div className="carousel-slide">
@@ -128,10 +155,19 @@ const HomePage = () => {
                 <div className="img-text-container">
                   <h3 className="img-text">Mobile and Web Development</h3>
                   <p className="img-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Cutting-edge mobile and web applications
                   </p>
+                  <ul>
+                    <li className="photo-text-list">
+                      Modern languages and Frameworks
+                    </li>
+                    <li className="photo-text-list">
+                      {" "}
+                      Security First Development
+                    </li>
+                    <li className="photo-text-list">Scalable Infrastructure</li>
+                    <li className="photo-text-list">Reliable Execution</li>
+                  </ul>
                 </div>{" "}
               </div>
             </div>
