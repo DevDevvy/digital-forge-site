@@ -34,17 +34,21 @@ const HomePage = () => {
   }, [totalSlides]);
 
   function toggleMenu() {
+    const navContainer = document.getElementById("nav-menu-container");
+    navContainer.classList.toggle("open");
     const icon = document.getElementById("hamburger-icon");
-    const digitalforge = document.getElementById("digitalforge");
-    const navIcons = document.getElementsByClassName("nav");
-    const contentContainer = document.getElementById("content-container");
     icon.classList.toggle("open");
+
+    const digitalforge = document.getElementById("digitalforge");
+    digitalforge.classList.toggle("open");
+
+    const contentContainer = document.getElementById("content-container");
+    contentContainer.classList.toggle("open");
+
+    const navIcons = document.getElementsByClassName("nav");
     for (let i = 0; i < navIcons.length; i++) {
       navIcons[i].classList.toggle("open");
     }
-
-    contentContainer.classList.toggle("open");
-    digitalforge.classList.toggle("open");
   }
 
   const moveSlide = (n) => {
