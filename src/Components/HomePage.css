@@ -111,6 +111,7 @@
   color: #d3eb37;
   background-color: #3b151590;
   transition: 0.5s ease;
+  transform: scale(1.2);
 }
 
 #nav-home.open {
@@ -152,12 +153,18 @@
 
 .carousel-slides {
   display: flex;
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* height: 100%; */
 }
 
 .carousel-slide {
-  min-width: 100%; /* Ensure each slide takes up full container width */
-  transition: transform 0.5s ease;
+  min-width: 100%;
+
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -165,30 +172,39 @@
   width: 100%; /* Make images stretch to cover the slide */
   height: 100%;
   vertical-align: middle;
+  object-fit: cover;
 }
 
 .img-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   backdrop-filter: blur(2px);
   width: 100%;
   height: auto;
-  /* padding: 1em; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 1.3em;
-  /* text-align: center; */
+  font-size: 1.4em;
 }
 .img-text {
   /* margin: 1.5em; */
   z-index: 100;
+  padding: 0 2em;
 }
-
+/* when the screen size gets less than 600px, make the .img-text-container text 1em */
+@media (max-width: 600px) {
+  .img-text-container {
+    font-size: 1em;
+  }
+}
 .photo-text-list {
   list-style: none; /* Remove default list style */
   padding-left: 0; /* Remove default padding */
-  text-align: center; /* Align text to the left */
+  padding-right: 0;
+  text-align: left; /* Align text to the left */
 }
 .photo-text-list:before {
   content: url("../assets/hammer-icon.svg"); /* Add custom icon */
@@ -197,15 +213,10 @@
   height: 20px;
   margin-right: 5px; /* Add space between icon and text */
 }
-
 ul {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 0;
+  margin: 0;
 }
-
 .prev,
 .next {
   cursor: pointer;

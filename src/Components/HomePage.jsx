@@ -100,17 +100,22 @@ const HomePage = () => {
               }}
             >
               <div className="carousel-slide">
-                <img src={satellite} alt="satellite pointed at the sky" />
+                <img
+                  className="slide-img"
+                  src={satellite}
+                  alt="satellite pointed at the sky"
+                />
                 <div className="img-text-container">
                   <h3 className="img-text">
                     Infrastructure and Cloud Services
                   </h3>
                   <p className="img-text">
-                    Specializing in AWS, we provide scalable, secure, and
-                    reliable solutions tailored to meet your unique business
-                    needs.
+                    AWS solutions tailored to meet your unique business needs.
                   </p>
                   <ul>
+                    <li className="photo-text-list">
+                      Infrastructure as Code and Cloud Migration
+                    </li>
                     <li className="photo-text-list">
                       Optimized Performance for Infrastructure
                     </li>
@@ -123,13 +128,15 @@ const HomePage = () => {
                     <li className="photo-text-list">
                       Industry Standard Cloud Security
                     </li>
-                    <li className="photo-text-list">Infrastructure as Code</li>
-                    <li className="photo-text-list">Cloud Migration</li>
                   </ul>
                 </div>
               </div>
               <div className="carousel-slide">
-                <img src={servers} alt="server cage with wires and lights" />
+                <img
+                  className="slide-img"
+                  src={servers}
+                  alt="server cage with wires and lights"
+                />
                 <div className="img-text-container">
                   <h3 className="img-text">Networking and Communications</h3>
                   <p className="img-text">
@@ -137,21 +144,27 @@ const HomePage = () => {
                   </p>
                   <ul>
                     <li className="photo-text-list">
-                      Network Design and Implementation
+                      Implementation: Design and Execution
                     </li>
                     <li className="photo-text-list">
-                      Network Security and Monitoring
+                      Security: Alerting and Monitoring
                     </li>
                     <li className="photo-text-list">
-                      Private to Enterprise Level
-                      <li className="photo-text-list">Wireless Networking</li>
+                      Complexity: Private to Enterprise Levels
+                      <li className="photo-text-list">
+                        Access: Wired and Wireless
+                      </li>
                     </li>
                     <li className="photo-text-list">VoIP and Telephony</li>
                   </ul>
-                </div>{" "}
+                </div>
               </div>
               <div className="carousel-slide">
-                <img src={motherboard} alt="computer chip close up" />
+                <img
+                  className="slide-img"
+                  src={motherboard}
+                  alt="computer chip close up"
+                />
                 <div className="img-text-container">
                   <h3 className="img-text">Mobile and Web Development</h3>
                   <p className="img-text">
@@ -159,16 +172,20 @@ const HomePage = () => {
                   </p>
                   <ul>
                     <li className="photo-text-list">
+                      Zero-Trust Authentication and Authorization
+                    </li>
+                    <li className="photo-text-list">
+                      Enterprise Level, Security First Development
+                    </li>
+                    <li className="photo-text-list">
                       Modern languages and Frameworks
                     </li>
                     <li className="photo-text-list">
-                      {" "}
-                      Security First Development
+                      Scalable and Optimized Code
                     </li>
-                    <li className="photo-text-list">Scalable Infrastructure</li>
                     <li className="photo-text-list">Reliable Execution</li>
                   </ul>
-                </div>{" "}
+                </div>
               </div>
             </div>
             <button className="prev" onClick={() => moveSlide(-1)}>
