@@ -76,7 +76,6 @@
 #nav-menu-container {
   display: flex;
   flex-direction: row;
-  /* space between */
   justify-content: space-between;
   align-items: center;
   /* width: 100%; */
