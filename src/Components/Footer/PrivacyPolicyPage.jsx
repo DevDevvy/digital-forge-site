@@ -1,6 +1,7 @@
+import "./PrivacyPolicy.css";
 export const PrivacyPolicyPage = () => {
   return (
-    <div>
+    <div id="privacyPolicyContainer">
       <h1>TABLE OF CONTENTS</h1>
       <p className="privacyPolicyParagraph">
         This privacy notice for Digital Forge Technologies ("we," "us," or
