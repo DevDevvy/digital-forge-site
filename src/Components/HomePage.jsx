@@ -10,6 +10,7 @@ import "./HomePage.css";
 import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
 import satellite from "../assets/satellite.jpg";
+import axios from "axios";
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -64,10 +65,28 @@ const HomePage = () => {
   const [message, setMessage] = useState("");
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
-    console.log("Submitting form with:", { email, name, message });
-    // Here you would typically send the data to a server or handle it as needed
+    const formData = { email, name, message };
+    const API_ENDPOINT =
+      "https://mfg9emrvth.execute-api.us-east-1.amazonaws.com/prod"; // TODO: Add your API endpoint here
+
+    try {
+      // Send a POST request to your endpoint
+      const response = await axios.post(API_ENDPOINT, formData);
+
+      // Handle response here
+      console.log("Email sent successfully:", response.data);
+
+      // Optionally reset form fields
+      setEmail("");
+      setName("");
+      setMessage("");
+
+      // Provide feedback to user or redirect as needed
+    } catch (error) {
+      console.error("Failed to send email:", error);
+    }
   };
 
   return (
