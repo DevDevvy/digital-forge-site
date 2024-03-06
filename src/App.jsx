@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import HomePage from "./Components/HomePage";
-import { PrivacyPolicyPage } from "./Components/Footer/PrivacyPolicyPage";
-import { AccessibilityPage } from "./Components/Footer/AccessibilityPage";
-import { TermsAndConditionsPage } from "./Components/Footer/TermsAndConditionsPage";
+import HomePage from "./Pages/HomePage";
+import { PrivacyPolicyPage } from "./Pages/Footer/PrivacyPolicyPage";
+import { TermsAndConditionsPage } from "./Pages/Footer/TermsAndConditionsPage";
+import { AccessibilityPage } from "./Pages/Footer/AccessibilityPage";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/privacy" element={<PrivacyPolicyPage />} />
-        <Route exact path="/accessibility" element={<AccessibilityPage />} />
         <Route exact path="/terms" element={<TermsAndConditionsPage />} />
+        <Route exact path="/accessibility" element={<AccessibilityPage />} />
       </Routes>
     </>
   );

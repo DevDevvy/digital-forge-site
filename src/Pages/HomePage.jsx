@@ -11,6 +11,7 @@ import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
 import satellite from "../assets/satellite.jpg";
 import axios from "axios";
+import { Footer } from "../Components/Footer/Footer";
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -68,8 +69,9 @@ const HomePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     const formData = { email, name, message };
+    console.log("Form data:", formData);
     const API_ENDPOINT =
-      "https://mfg9emrvth.execute-api.us-east-1.amazonaws.com/prod"; // TODO: Add your API endpoint here
+      "https://mfg9emrvth.execute-api.us-east-1.amazonaws.com/prod/send-email"; // TODO: Add your API endpoint here
 
     try {
       // Send a POST request to your endpoint
@@ -256,29 +258,7 @@ const HomePage = () => {
             </form>
           </div>
           {/* Footer with legal links */}
-          <footer id="footer">
-            <a
-              href="/terms"
-              aria-label="Terms and conditions"
-              className="footer-links"
-            >
-              Terms and Conditions
-            </a>
-            <a
-              href="/privacy"
-              aria-label="Privacy policy"
-              className="footer-links"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/accessibility"
-              aria-label="Our Commitment to Accessibility"
-              className="footer-links"
-            >
-              Our Commitment to Accessibility
-            </a>
-          </footer>
+          <Footer />
         </div>
       </div>
     </>
