@@ -11,7 +11,7 @@ import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
 import satellite from "../assets/satellite.jpg";
 import axios from "axios";
-import { Footer } from "./Footer/Footer";
+import { Footer } from "../Components/Footer/Footer";
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);

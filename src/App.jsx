@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import HomePage from "./Components/HomePage";
-import { PrivacyPolicyPage } from "./Components/Footer/PrivacyPolicyPage";
-import { TermsAndConditionsPage } from "./Components/Footer/TermsAndConditionsPage";
-import { AccessibilityPage } from "./Components/Footer/AccessibilityPage";
+import HomePage from "./Pages/HomePage";
+import { PrivacyPolicyPage } from "./Pages/Footer/PrivacyPolicyPage";
+import { TermsAndConditionsPage } from "./Pages/Footer/TermsAndConditionsPage";
+import { AccessibilityPage } from "./Pages/Footer/AccessibilityPage";
 
 function App() {
   return (
