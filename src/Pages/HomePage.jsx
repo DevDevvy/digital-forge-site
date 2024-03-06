@@ -69,8 +69,9 @@ const HomePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     const formData = { email, name, message };
+    console.log("Form data:", formData);
     const API_ENDPOINT =
-      "https://mfg9emrvth.execute-api.us-east-1.amazonaws.com/prod"; // TODO: Add your API endpoint here
+      "https://mfg9emrvth.execute-api.us-east-1.amazonaws.com/prod/send-email"; // TODO: Add your API endpoint here
 
     try {
       // Send a POST request to your endpoint
