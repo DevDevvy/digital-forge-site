@@ -5,7 +5,7 @@
 // Add images and whatnot to carousel
 // Reset interval for auto-scrolling when user interacts with carousel
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./HomePage.css";
 import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
