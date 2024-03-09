@@ -1,0 +1,227 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page layout */
+.about-us {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero image */
+.about-us-hero-image {
+  width: 80%;
+  height: auto; /* Adjust height as needed */
+  background-size: cover;
+  margin-bottom: 20px;
+}
+.about-us-hero-image:hover {
+  /* change image hue to dark blues and make image dark */
+  filter: hue-rotate(180deg) brightness(0.5);
+  transition: 0.8s;
+}
+
+.about-us-hero-image {
+  --b: 5px; /* the border thickness */
+  --d: 20px; /* the distance from the edge */
+  --o: 15px; /* the offset on hover */
+  --s: 1; /* the direction of the hover effect (+1 or -1)*/
+
+  --_d: calc(var(--d) + var(--s) * 1em);
+  --_g: calc(100% - 2 * (var(--_d) + var(--b)));
+  --_m: conic-gradient(from 90deg at var(--_d) var(--_d), #0000 25%, #000 0) 0 0 /
+      calc(100% - var(--_d)) calc(100% - var(--_d)),
+    linear-gradient(#000 0 0) 50% / var(--_g) var(--_g) no-repeat;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  font-size: 0;
+  cursor: pointer;
+  transition: 0.85s;
+}
+.about-us-hero-image:hover {
+  font-size: var(--o);
+}
+
+/* Content section */
+.content {
+  opacity: 0; /* Content will fade in on page load */
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  padding: 0.5em;
+  margin: 2em;
+}
+
+/* Footer section */
+.about-us-footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.btn-home,
+.btn-email-us {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1em;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px; /* Increase border radius for more depth */
+  background-color: #f0f0f0; /* Background color for neumorphic effect */
+  color: #333; /* Text color */
+  box-shadow:
+    5px 5px 10px #b8b8b8,
+    -5px -5px 10px #ffffff; /* Box shadow for neumorphic effect */
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease; /* Transition effect */
+  cursor: pointer; /* Cursor pointer */
+}
+
+.btn-home:hover,
+.btn-email-us:hover {
+  background-color: #e0e0e0; /* Darken background color on hover */
+  box-shadow:
+    3px 3px 6px #b8b8b8,
+    -3px -3px 6px #ffffff; /* Adjust box shadow on hover */
+}
+
+.about-us-hero {
+  position: relative;
+  display: inline-block;
+}
+
+.about-us-hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+.about-us-hero:hover .overlay {
+  display: block;
+  /* make mouse into pointer hand */
+  cursor: pointer;
+}
+
+.about-us-hero:hover .overlay p {
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+.overlay:hover {
+  background-color: #799bc0;
+  color: #fff;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.quote {
+  animation: floatUpAnimation 9s infinite alternate ease-in-out;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  padding: 0.5em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  max-width: 45vw;
+  position: absolute;
+  top: 80%;
+  left: 27vw;
+}
+
+.quote h2 {
+  font-size: min(1.5em, 5vw);
+  color: #333;
+}
+
+/* for modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Floating animation */
+@keyframes floatUpAnimation {
+  0% {
+    transform: translateY(20);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg) scale(1.02);
+  }
+  100% {
+    transform: translateY(20);
+  }
+
+  /* float left and right randomly */
+
+  0%,
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 900px) {
+  .quote {
+    font-size: 14px;
+  }
+}
+@media (max-width: 750px) {
+  .quote {
+    font-size: 9px;
+    margin: 0;
+  }
+}
+@media (max-width: 500px) {
+  .quote {
+    font-size: 8px;
+    margin: 0;
+    padding: 2px;
+    left: 20vw;
+  }
+}

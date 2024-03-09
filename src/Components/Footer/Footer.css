@@ -1,0 +1,19 @@
+/* css for professional technology, modern website */
+
+#footer {
+  background-color: #dee5ec;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 1px 1px 5px grey;
+}
+
+#footer a {
+  color: #6c757d;
+  text-decoration: none;
+}

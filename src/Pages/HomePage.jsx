@@ -10,13 +10,14 @@ import "./HomePage.css";
 import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
 import satellite from "../assets/satellite.jpg";
-import axios from "axios";
 import { Footer } from "../Components/Footer/Footer";
+import { NavMenu } from "../Components/Nav";
+import { ContactForm } from "../Components/ContactForm";
 
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
-  const totalSlides = 3; // Assuming you have 3 slides, adjust accordingly
-  const slideIntervalTime = 4500; // Slide interval time in milliseconds
+  const totalSlides = 4; // Assuming you have 3 slides, adjust accordingly
+  const slideIntervalTime = 9000; // Slide interval time in milliseconds
 
   let slideInterval = useRef(null);
 
@@ -35,24 +36,6 @@ const HomePage = () => {
     return () => clearInterval(slideInterval.current); // Cleanup on component unmount
   }, [totalSlides]);
 
-  function toggleMenu() {
-    const navContainer = document.getElementById("nav-menu-container");
-    navContainer.classList.toggle("open");
-    const icon = document.getElementById("hamburger-icon");
-    icon.classList.toggle("open");
-
-    const digitalforge = document.getElementById("digitalforge");
-    digitalforge.classList.toggle("open");
-
-    const contentContainer = document.getElementById("content-container");
-    contentContainer.classList.toggle("open");
-
-    const navIcons = document.getElementsByClassName("nav");
-    for (let i = 0; i < navIcons.length; i++) {
-      navIcons[i].classList.toggle("open");
-    }
-  }
-
   const moveSlide = (n) => {
     let newIndex = slideIndex + n;
     if (newIndex >= totalSlides) newIndex = 0;
@@ -61,56 +44,10 @@ const HomePage = () => {
     autoScroll(); // Reset the auto-scroll interval
   };
 
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    const formData = { email, name, message };
-    console.log("Form data:", formData);
-    const API_ENDPOINT =
-      "https://mfg9emrvth.execute-api.us-east-1.amazonaws.com/prod/send-email"; // TODO: Add your API endpoint here
-
-    try {
-      // Send a POST request to your endpoint
-      const response = await axios.post(API_ENDPOINT, formData);
-
-      // Handle response here
-      console.log("Email sent successfully:", response.data);
-
-      // Optionally reset form fields
-      setEmail("");
-      setName("");
-      setMessage("");
-
-      // Provide feedback to user or redirect as needed
-    } catch (error) {
-      console.error("Failed to send email:", error);
-    }
-  };
-
   return (
     <>
       <div id="page-container">
-        <div id="hamburger-icon" onClick={toggleMenu}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <h1 id="digitalforge">Digital Forge</h1>
-        <div id="nav-menu-container">
-          <nav id="nav-home" className="nav">
-            Home
-          </nav>
-          <nav id="nav-about" className="nav">
-            About
-          </nav>
-          <nav id="nav-pay" className="nav">
-            Pay Link
-          </nav>
-        </div>
+        <NavMenu />
         <div id="content-container">
           <div className="carousel">
             <div
@@ -133,7 +70,7 @@ const HomePage = () => {
                   <p className="img-text">
                     AWS solutions tailored to meet your unique business needs.
                   </p>
-                  <ul>
+                  <ul className="photo-text-ul">
                     <li className="photo-text-list">
                       Infrastructure as Code and Cloud Migration
                     </li>
@@ -163,7 +100,7 @@ const HomePage = () => {
                   <p className="img-text">
                     Comprehensive networking and communications setup solutions.
                   </p>
-                  <ul>
+                  <ul className="photo-text-ul">
                     <li className="photo-text-list">
                       Implementation: Design and Execution
                     </li>
@@ -191,7 +128,7 @@ const HomePage = () => {
                   <p className="img-text">
                     Cutting-edge mobile and web applications
                   </p>
-                  <ul>
+                  <ul className="photo-text-ul">
                     <li className="photo-text-list">
                       Zero-Trust Authentication and Authorization
                     </li>
@@ -208,6 +145,33 @@ const HomePage = () => {
                   </ul>
                 </div>
               </div>
+              <div className="carousel-slide">
+                <img
+                  className="slide-img"
+                  src={motherboard}
+                  alt="computer chip close up"
+                />
+                <div className="img-text-container">
+                  <h3 className="img-text">Automation and AI</h3>
+                  <p className="img-text">
+                    Modern automation and AI solutions for your business.
+                  </p>
+                  <ul className="photo-text-ul">
+                    <li className="photo-text-list">
+                      Website AI assistant integration
+                    </li>
+                    <li className="photo-text-list">
+                      Specialized AI for your business
+                    </li>
+                    <li className="photo-text-list">
+                      Business process automation
+                    </li>
+                    <li className="photo-text-list">
+                      AI and Automation consulting
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <button className="prev" onClick={() => moveSlide(-1)}>
               &#10094;
@@ -220,43 +184,7 @@ const HomePage = () => {
             Contact us using the form below <br /> to let us know your vision,{" "}
             <br /> and we will help you bring it to life.
           </div>
-          <div className="contact-form">
-            <form onSubmit={handleSubmit}>
-              <div className="form-div">
-                <label htmlFor="email">Your Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="form-div">
-                <label htmlFor="name">Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="form-div">
-                <label htmlFor="message">Message:</label>
-                <textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                  // style={{ resize: "none" }}
-                ></textarea>
-              </div>
-              <button id="homePageSubmitButton" type="submit">
-                Submit
-              </button>
-            </form>
-          </div>
+          <ContactForm showCloseButton={false} />
           {/* Footer with legal links */}
           <Footer />
         </div>

@@ -73,21 +73,13 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-#nav-menu-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  /* width: 100%; */
-}
-
 .nav {
   /* make divs be offscreen without display:none*/
   position: fixed;
   top: -100px;
+  transition: top 0.5s ease-in-out; /* Add transition for smooth animation */
 }
 .nav.open {
-  /* display: none; */
   color: rgb(176, 18, 18);
   transition: 1s ease-in-out;
   display: flex;
@@ -187,11 +179,20 @@
   transform: translate(-50%, -50%);
   color: white;
   font-size: 1.4em;
+  padding: 1em;
 }
 .img-text {
   /* margin: 1.5em; */
   z-index: 100;
-  padding: 0 2em;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  margin: 0 1em;
+}
+
+.photo-text-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* when the screen size gets less than 600px, make the .img-text-container text 1em */
 @media (max-width: 600px) {
@@ -245,14 +246,14 @@ ul {
 
 .contact-form {
   border-radius: 10px;
-  padding: 30px;
+  padding: 2em;
   box-shadow: 8px 15px 38px #bebebe;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 1em;
-  width: 25vh;
+  width: 30vh;
 }
 
 .contact-form label {
@@ -332,4 +333,24 @@ label {
   justify-content: space-between;
   /* width: 100%; */
   padding: 0 20px;
+}
+.close-button {
+  cursor: pointer;
+  border: none;
+  z-index: 1000;
+  text-align: right;
+  margin-right: 1em;
+  padding: 5px;
+  border-radius: 5px;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.close-div {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
