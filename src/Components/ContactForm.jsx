@@ -18,7 +18,11 @@ export const ContactForm = ({ onClose, showCloseButton }) => {
 
     try {
       // Send a POST request to your endpoint
-      const response = await axios.post(API_ENDPOINT, formData);
+      const response = await axios.post(API_ENDPOINT, formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       // Handle response here
       console.log("Email sent successfully:", response.data);
