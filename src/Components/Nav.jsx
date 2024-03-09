@@ -37,7 +37,7 @@ export const NavMenu = () => {
         <Link
           id="nav-pay"
           className="nav"
-          href="https://connect.intuit.com/pay/DigitalForge/scs-v1-e82ba5da82074903b2a743c776bbb8c2cc6f34a98fd541fd920c5bbbac5328edcde7207b3ca04e0b9ea2687db200b4fe?locale=EN_US"
+          to="https://connect.intuit.com/pay/DigitalForge/scs-v1-e82ba5da82074903b2a743c776bbb8c2cc6f34a98fd541fd920c5bbbac5328edcde7207b3ca04e0b9ea2687db200b4fe?locale=EN_US"
         >
           Buy Us A Coffee
         </Link>
