@@ -41,7 +41,6 @@ body {
   -webkit-mask: var(--_m);
   mask: var(--_m);
   font-size: 0;
-  cursor: pointer;
   transition: 0.85s;
 }
 .about-us-hero-image:hover {

@@ -26,7 +26,20 @@ const AboutUsPage = () => {
             <div className="about-us-hero">
               <img className="about-us-hero-image" src={robuddies} />
               <div className="overlay">
-                <p onClick={handleEmailButtonClick}>Contact Us Now</p>
+                <p
+                  className="btn-contact-us"
+                  onClick={handleEmailButtonClick}
+                  tabIndex="0" // Make the element focusable
+                  onKeyUp={(event) => {
+                    // Trigger the action when the Enter key is pressed
+                    if (event.key === "Enter" || event.key === " ") {
+                      handleEmailButtonClick();
+                    }
+                  }}
+                  role="button" // Indicate the element's role for accessibility
+                >
+                  Contact Us Now
+                </p>
               </div>
               <div className="quote">
                 <h2>

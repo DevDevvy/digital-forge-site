@@ -1,5 +1,19 @@
 import "./PrivacyPolicy.css";
+import "./AccessibilityPage.css";
+import { ContactForm } from "../../Components/ContactForm";
+import { useState } from "react";
+import ModalOverlay from "../../Components/ContactFormOverlay";
+
 export const AccessibilityPage = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+  const handleEmailButtonClick = () => {
+    setShowContactForm(true);
+  };
+
+  const handleCloseContactForm = () => {
+    setShowContactForm(false);
+  };
+
   return (
     <div id="policyContainer">
       <h1>ACCESSIBILITY STATEMENT</h1>
@@ -43,7 +57,21 @@ export const AccessibilityPage = () => {
         We welcome your feedback on the accessibility of digitalforge-tek.com.
         Please let us know if you encounter accessibility barriers on
         digitalforge-tek.com:
-        <a href="mailto:support@digitalforge-tek.com">Email Support</a>
+        <a
+          id="email_support-accessibility_page"
+          onClick={handleEmailButtonClick}
+          tabIndex="0" // Make the anchor tag focusable
+          onKeyUp={(e) => {
+            e.preventDefault();
+            if (e.key === "Enter" || e.key === " ") {
+              handleEmailButtonClick();
+            }
+          }} // Handle the Enter key up for accessibility
+          role="button" // Indicate the anchor acts as a button
+          aria-label="Email support" // Provide an accessible name
+        >
+          Email Support
+        </a>
         <br></br>
         We try to respond to feedback within 3 business days.
       </p>
@@ -62,6 +90,14 @@ export const AccessibilityPage = () => {
         experience any difficulty in accessing digitalforge-tek.com, please
         don't hesitate to contact us.
       </p>
+      {showContactForm && (
+        <ModalOverlay
+          onClose={handleCloseContactForm}
+          showCloseButton={showContactForm} // Pass the showContactForm state
+        >
+          <ContactForm />
+        </ModalOverlay>
+      )}
     </div>
   );
 };
