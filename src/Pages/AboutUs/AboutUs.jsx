@@ -6,6 +6,12 @@ import { useState } from "react";
 import ModalOverlay from "../../Components/ContactFormOverlay";
 import { Footer } from "../../Components/Footer/Footer";
 import { NavMenu } from "../../Components/Nav";
+import { ProfilePhotoFrame } from "../../Components/ProfilePhotoFrame";
+import efrain from "../../assets/efrain.png";
+import dustin from "../../assets/dustin.png";
+import mac from "../../assets/mac.png";
+import randall from "../../assets/randall.png";
+import ProfilePhotoFrameGroup from "../../Components/ProfilePhotoGroup";
 
 const AboutUsPage = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -16,6 +22,13 @@ const AboutUsPage = () => {
   const handleCloseContactForm = () => {
     setShowContactForm(false);
   };
+
+  const profiles = [
+    { photo: mac, name: "Mac" },
+    { photo: randall, name: "Randall" },
+    { photo: dustin, name: "Dustin" },
+    { photo: efrain, name: "Efrain" },
+  ];
 
   return (
     <>
@@ -46,9 +59,9 @@ const AboutUsPage = () => {
                   Amazing things are within reach <br></br>when you keep the
                   right company.
                 </h2>
-                {/* Add a short blurb or quote about the company */}
               </div>
             </div>
+            <ProfilePhotoFrameGroup profiles={profiles} />
             <div className="content">
               <p className="paragraph">
                 DigitalForge is a new company with a seasoned team. We are
