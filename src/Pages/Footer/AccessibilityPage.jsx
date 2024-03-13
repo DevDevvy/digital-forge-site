@@ -34,9 +34,11 @@ export const AccessibilityPage = () => {
         everyone.
       </p>
       <h4 className="privacyPolicySummaryOfKeyPoints">Features</h4>
-      <p className="policyParagraph">
-        Our website includes the following features designed to improve
-        accessibility:
+      <div className="policyParagraph">
+        <p>
+          Our website includes the following features designed to improve
+          accessibility:
+        </p>
         <ul>
           <li>
             <em>Text Alternatives:</em> Images have alternative text that can be
@@ -51,7 +53,7 @@ export const AccessibilityPage = () => {
             background colors to improve readability.
           </li>
         </ul>
-      </p>
+      </div>
       <h4 className="privacyPolicySummaryOfKeyPoints">Feedback</h4>
       <p className="policyParagraph">
         We welcome your feedback on the accessibility of digitalforge-tek.com.
@@ -65,6 +67,7 @@ export const AccessibilityPage = () => {
             e.preventDefault();
             if (e.key === "Enter" || e.key === " ") {
               handleEmailButtonClick();
+              document.body.classList.toggle("menu-open");
             }
           }} // Handle the Enter key up for accessibility
           role="button" // Indicate the anchor acts as a button

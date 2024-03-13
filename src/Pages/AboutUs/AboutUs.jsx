@@ -17,6 +17,7 @@ const AboutUsPage = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const handleEmailButtonClick = () => {
     setShowContactForm(true);
+    document.body.classList.toggle("menu-open");
   };
 
   const handleCloseContactForm = () => {
