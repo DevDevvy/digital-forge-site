@@ -63,10 +63,6 @@ const AboutUsPage = ({
             are also committed to accessibility and inclusion, and we are always
             looking for ways to make our solutions more accessible to everyone.
           </p>
-          <p className="paragraph">
-            Contact us now to get your free consultation and see how we can help
-            you.
-          </p>
         </div>
 
         {showContactForm && (
