@@ -1,4 +1,3 @@
-// contact form component
 import { useState } from "react";
 import "./ContactForm.css";
 import axios from "axios";
@@ -7,9 +6,7 @@ const ContactForm = ({ onClose, showCloseButton }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  ContactForm.defaultProps = {
-    onClose: () => {}, // Provide a no-operation function as the default
-  };
+
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -90,6 +87,10 @@ const ContactForm = ({ onClose, showCloseButton }) => {
       </div>
     </>
   );
+};
+
+ContactForm.defaultProps = {
+  onClose: () => {}, // Provide a no-operation function as the default
 };
 
 export default ContactForm;
