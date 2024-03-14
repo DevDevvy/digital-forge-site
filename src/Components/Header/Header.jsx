@@ -1,4 +1,4 @@
-import { NavMenu } from "../Nav";
+import { HamburgerMenu } from "../HamburgerMenu";
 import "./Header.css";
 
 export const Header = ({ toggleDarkMode, darkMode }) => {
@@ -17,7 +17,7 @@ export const Header = ({ toggleDarkMode, darkMode }) => {
           <span className="slider round"></span>
         </label>
         <h2 id="title">DIGITAL FORGE</h2>
-        <NavMenu darkMode={darkMode} />
+        <HamburgerMenu darkMode={darkMode} />
       </div>
     </div>
   );

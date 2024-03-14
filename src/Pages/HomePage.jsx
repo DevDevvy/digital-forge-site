@@ -11,7 +11,7 @@ import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
 import satellite from "../assets/satellite.jpg";
 import { Footer } from "../Components/Footer/Footer";
-import { NavMenu } from "../Components/Nav";
+import { HamburgerMenu } from "../Components/HamburgerMenu";
 import { ContactForm } from "../Components/ContactForm";
 import AboutUsPage from "./AboutUs/AboutUs";
 import efrain from "../assets/efrain.png";

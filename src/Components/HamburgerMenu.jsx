@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import "../Pages/HomePage.css"; // Make sure this path is correct
+import "./HamburgerMenu.css"; // Make sure this path is correct
 
-export const NavMenu = ({ darkMode }) => {
-  function toggleMenu() {
+export const HamburgerMenu = ({ darkMode }) => {
+  function toggleHamburgerMenu() {
     document.body.classList.toggle("menu-open");
   }
 
@@ -11,7 +11,7 @@ export const NavMenu = ({ darkMode }) => {
       <div
         id="hamburger-icon"
         className={darkMode ? "dark-mode" : ""}
-        onClick={toggleMenu}
+        onClick={toggleHamburgerMenu}
       >
         <div></div>
         <div></div>
