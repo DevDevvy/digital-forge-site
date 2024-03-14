@@ -13,11 +13,37 @@ import satellite from "../assets/satellite.jpg";
 import { Footer } from "../Components/Footer/Footer";
 import { NavMenu } from "../Components/Nav";
 import { ContactForm } from "../Components/ContactForm";
-
+import AboutUsPage from "./AboutUs/AboutUs";
+import efrain from "../assets/efrain.png";
+import dustin from "../assets/dustin.png";
+import mac from "../assets/mac.png";
+import randall from "../assets/randall.png";
+import ProfilePhotoFrameGroup from "../Components/ProfilePhotoGroup";
+import ModalOverlay from "../Components/ContactFormOverlay";
+import { Header } from "../Components/Header/Header";
 const HomePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+  const handleEmailButtonClick = () => {
+    setShowContactForm(true);
+  };
+  const handleCloseContactForm = () => {
+    setShowContactForm(false);
+  };
   const totalSlides = 4; // Assuming you have 3 slides, adjust accordingly
   const slideIntervalTime = 9000; // Slide interval time in milliseconds
+
+  const profiles = [
+    { photo: mac, name: "Mac" },
+    { photo: randall, name: "Randall" },
+    { photo: dustin, name: "Dustin" },
+    { photo: efrain, name: "Efrain" },
+  ];
 
   let slideInterval = useRef(null);
 
@@ -46,9 +72,16 @@ const HomePage = () => {
 
   return (
     <>
-      <div id="page-container">
-        <NavMenu />
+      <div id="page-container" className={`App ${darkMode ? "dark-mode" : ""}`}>
+        <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+
         <div id="content-container">
+          <AboutUsPage
+            handleEmailButtonClick={handleEmailButtonClick}
+            handleCloseContactForm={handleCloseContactForm}
+            showContactForm={showContactForm}
+            isDarkMode={darkMode}
+          />
           <div className="carousel">
             <div
               className="carousel-slides"
@@ -180,6 +213,13 @@ const HomePage = () => {
               &#10095;
             </button>
           </div>
+          <div className="profiles">
+            <h2 id="team">Meet the Team</h2>
+            <ProfilePhotoFrameGroup
+              profiles={profiles}
+              onClick={handleEmailButtonClick}
+            />
+          </div>
           <div id="cta">
             Contact us using the form below <br /> to let us know your vision,{" "}
             <br /> and we will help you bring it to life.
@@ -189,6 +229,14 @@ const HomePage = () => {
           <Footer />
         </div>
       </div>
+      {showContactForm && (
+        <ModalOverlay
+          onClose={handleCloseContactForm}
+          showCloseButton={showContactForm} // Pass the showContactForm state
+        >
+          <ContactForm />
+        </ModalOverlay>
+      )}
     </>
   );
 };
