@@ -1,7 +1,7 @@
 import robuddies from "../../assets/robuddies.png";
 import "./AboutUs.css";
-import { ContactForm } from "../../Components/ContactForm";
-import ModalOverlay from "../../Components/ContactFormOverlay";
+import ContactForm from "../../Components/ContactForm";
+import ModalOverlay from "../../Components/ModalOverlay";
 
 const AboutUsPage = ({
   handleEmailButtonClick,

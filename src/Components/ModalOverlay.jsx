@@ -1,4 +1,4 @@
-import "../Pages/HomePage.css";
+import "./ModalOverlay.css";
 import ReactDOM from "react-dom";
 const ModalOverlay = ({ children, onClose, showCloseButton }) => {
   return ReactDOM.createPortal(
