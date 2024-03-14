@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { HamburgerMenu } from "../HamburgerMenu";
 import "./Header.css";
 
-export const Header = ({ toggleDarkMode, darkMode }) => {
+const Header = ({ toggleDarkMode, darkMode }) => {
   const titleRef = useRef(null);
 
   useEffect(() => {
@@ -42,3 +42,5 @@ export const Header = ({ toggleDarkMode, darkMode }) => {
     </div>
   );
 };
+
+export default Header;

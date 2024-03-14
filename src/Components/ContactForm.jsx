@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./ContactForm.css";
 import axios from "axios";
 
-export const ContactForm = ({ onClose, showCloseButton }) => {
+const ContactForm = ({ onClose, showCloseButton }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -88,3 +88,5 @@ export const ContactForm = ({ onClose, showCloseButton }) => {
     </>
   );
 };
+
+export default ContactForm;
