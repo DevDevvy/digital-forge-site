@@ -21,7 +21,7 @@ export const ProfilePhotoFrame = ({ photo, name }) => {
     <div className="photo-frame" onMouseOver={tiltDiv}>
       <div className="photo-ring">
         <img src={photo} alt={name} className="profile-photo" />
-        <text className="profile-name">{name.toUpperCase()}</text>
+        <p className="profile-name">{name.toUpperCase()}</p>
       </div>
     </div>
   );

@@ -142,9 +142,9 @@ const HomePage = () => {
                     </li>
                     <li className="photo-text-list">
                       Complexity: Private to Enterprise Levels
-                      <li className="photo-text-list">
-                        Access: Wired and Wireless
-                      </li>
+                    </li>
+                    <li className="photo-text-list">
+                      Access: Wired and Wireless
                     </li>
                     <li className="photo-text-list">VoIP and Telephony</li>
                   </ul>
