@@ -1,9 +1,0 @@
-body.menu-open #nav-menu-container {
-    transform: translateX(0); /* Or any visible state */
-  }
-  
-  #nav-menu-container {
-    transform: translateX(-100%); /* Initially hidden */
-    transition: transform 0.3s ease; /* Smooth transition */
-  }
-  
