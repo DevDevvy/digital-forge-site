@@ -7,7 +7,9 @@ const ContactForm = ({ onClose, showCloseButton }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-
+  ContactForm.defaultProps = {
+    onClose: () => {}, // Provide a no-operation function as the default
+  };
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -37,6 +39,7 @@ const ContactForm = ({ onClose, showCloseButton }) => {
   return (
     <>
       <div>
+        {/** */}
         {showCloseButton && (
           <button className="close-button" onClick={onClose}>
             X
