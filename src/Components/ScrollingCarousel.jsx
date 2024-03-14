@@ -1,10 +1,3 @@
-// TODO: Home page styling
-// Update styling for page layout
-// Add pay link to hamburger icon
-// Send email on submit of contact form
-// Add images and whatnot to carousel
-// Reset interval for auto-scrolling when user interacts with carousel
-
 import { useState, useEffect, useRef } from "react";
 import "./ScrollingCarousel.css";
 import motherboard from "../assets/motherboard.jpg";
@@ -21,9 +14,6 @@ const ScrollingCarousel = () => {
   const autoScroll = () => {
     clearInterval(slideInterval.current); // Clear existing interval
     slideInterval.current = setInterval(() => {
-      console.log(
-        `Auto-scrolling to the next slide: ${new Date().toLocaleTimeString()}`
-      );
       setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
     }, slideIntervalTime);
   };

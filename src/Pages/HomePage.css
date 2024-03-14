@@ -41,8 +41,4 @@ label {
   display: block;
 }
 
-.close-div {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
+
