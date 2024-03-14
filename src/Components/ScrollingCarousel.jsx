@@ -21,9 +21,6 @@ const ScrollingCarousel = () => {
   const autoScroll = () => {
     clearInterval(slideInterval.current); // Clear existing interval
     slideInterval.current = setInterval(() => {
-      console.log(
-        `Auto-scrolling to the next slide: ${new Date().toLocaleTimeString()}`
-      );
       setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
     }, slideIntervalTime);
   };
