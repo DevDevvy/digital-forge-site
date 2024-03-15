@@ -33,6 +33,7 @@ const ScrollingCarousel = () => {
 
   return (
     <>
+      <div className="carousel-header"> OUR SERVICES</div>
       <div className="carousel">
         <div
           className="carousel-slides"
