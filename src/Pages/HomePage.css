@@ -41,4 +41,11 @@ label {
   display: block;
 }
 
-
+@media (max-width: 600px) {
+  .photo-text-list {
+    font-size: small;
+  }
+  .img-text {
+    font-size: medium;
+  }
+}

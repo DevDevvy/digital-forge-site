@@ -1,85 +1,86 @@
 .carousel {
-    position: relative;
-    max-width: 600px; /* Adjust based on your needs */
-    margin: auto;
-    overflow: hidden;
-    box-shadow: 2px 9px 17px 2px;
-    border-radius: 10px;
-    margin-top: 5em;
-    margin-bottom: 3em;
+  position: relative;
+  max-width: 600px; /* Adjust based on your needs */
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 2px 9px 17px 2px;
+  border-radius: 10px;
+  margin-top: 5em;
+  margin-bottom: 3em;
 }
-  
-.carousel-slides {
-    display: flex;
-    /* flex-direction: row; */
-    /* align-items: center; */
-    /* height: 100%; */
-}
-  
-.carousel-slide {
-    min-width: 100%;
 
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.carousel-slides {
+  display: flex;
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* height: 100%; */
 }
-  
+
+.carousel-slide {
+  min-width: 100%;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .carousel-slide img {
-    width: 100%; /* Make images stretch to cover the slide */
-    height: 100%;
-    vertical-align: middle;
-    object-fit: cover;
+  width: 100%; /* Make images stretch to cover the slide */
+  height: 100%;
+  vertical-align: middle;
+  object-fit: cover;
 }
-  
+
 .img-text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    backdrop-filter: blur(2px);
-    width: 100%;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 1.4em;
-    padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  backdrop-filter: blur(2px);
+  width: 90%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.4em;
+  padding: 1em;
 }
 
 .img-text {
-    /* margin: 1.5em; */
-    z-index: 100;
-    text-align: center;
-    padding: 0.5em 0.5em;
-    margin: 0 1em;
+  /* margin: 1.5em; */
+  z-index: 100;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  margin: 0 1em;
 }
-  
-  .photo-text-ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  .next {
-    right: 0;
-  }
-  
+
+.photo-text-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: 0;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
