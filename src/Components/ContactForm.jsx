@@ -1,9 +1,8 @@
-// contact form component
 import { useState } from "react";
-import "../Pages/HomePage.css";
+import "./ContactForm.css";
 import axios from "axios";
 
-export const ContactForm = ({ onClose, showCloseButton }) => {
+const ContactForm = ({ onClose, showCloseButton }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -12,20 +11,15 @@ export const ContactForm = ({ onClose, showCloseButton }) => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     const formData = { email, name, message };
-    console.log("Form data:", formData);
     const API_ENDPOINT =
       "https://mfg9emrvth.execute-api.us-east-1.amazonaws.com/prod/send-email"; // TODO: Add your API endpoint here
 
     try {
-      // Send a POST request to your endpoint
-      const response = await axios.post(API_ENDPOINT, formData, {
+      await axios.post(API_ENDPOINT, formData, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-
-      // Handle response here
-      console.log("Email sent successfully:", response.data);
 
       // Optionally reset form fields
       setEmail("");
@@ -42,13 +36,18 @@ export const ContactForm = ({ onClose, showCloseButton }) => {
   return (
     <>
       <div>
+        {/** */}
         {showCloseButton && (
           <button className="close-button" onClick={onClose}>
             X
           </button>
         )}
-        <h3 className="form-div">Contact DigitalForge</h3>
+        <div id="cta">
+          Contact us using the form below <br /> to let us know your vision,{" "}
+          <br /> and we will help you bring it to life.
+        </div>
         <div className="contact-form">
+          <h3 className="contact-form-h3">Contact DigitalForge</h3>
           <form onSubmit={handleSubmit}>
             <div className="form-div">
               <label htmlFor="email">Your Email:</label>
@@ -89,3 +88,9 @@ export const ContactForm = ({ onClose, showCloseButton }) => {
     </>
   );
 };
+
+ContactForm.defaultProps = {
+  onClose: () => {}, // Provide a no-operation function as the default
+};
+
+export default ContactForm;

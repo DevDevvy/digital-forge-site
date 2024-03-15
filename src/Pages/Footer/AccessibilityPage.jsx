@@ -1,8 +1,8 @@
 import "./PrivacyPolicy.css";
 import "./AccessibilityPage.css";
-import { ContactForm } from "../../Components/ContactForm";
+import ContactForm from "../../Components/ContactForm";
 import { useState } from "react";
-import ModalOverlay from "../../Components/ContactFormOverlay";
+import ModalOverlay from "../../Components/ModalOverlay";
 
 export const AccessibilityPage = () => {
   const [showContactForm, setShowContactForm] = useState(false);
