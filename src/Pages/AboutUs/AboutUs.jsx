@@ -2,6 +2,7 @@ import robuddies from "../../assets/robuddies.png";
 import "./AboutUs.css";
 import ContactForm from "../../Components/ContactForm";
 import ModalOverlay from "../../Components/ModalOverlay";
+import logo from "../../assets/DF-Logo.png";
 
 const AboutUsPage = ({
   handleEmailButtonClick,
@@ -37,7 +38,12 @@ const AboutUsPage = ({
             </h2>
           </div>
         </div>
-        <div className={isDarkMode ? "content dark-mode" : "content"}>
+        <img
+          className={isDarkMode ? "dark-mode-photo" : "background-photo-df"}
+          src={logo}
+          alt="digital forge logo"
+        />
+        <div className={isDarkMode ? "content dark-mode-p" : "content"}>
           <p className="paragraph">
             DigitalForge is a new company with a seasoned team. We are
             professionals who saw too much value in ourselves to stay victim to

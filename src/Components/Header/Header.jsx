@@ -6,7 +6,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
   const titleRef = useRef(null);
 
   useEffect(() => {
-    // Define the function that handles the scroll event
+    // This spins the DF logo at the top of page on scroll
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const rotationAngle = scrollPosition / 2; // Adjust the division factor to control the rotation speed
