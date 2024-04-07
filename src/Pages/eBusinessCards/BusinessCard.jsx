@@ -19,21 +19,23 @@ const EBusinessCard = () => {
   }, []);
 
   const downloadVCard = () => {
-    // Example VCF content
     const vCardData = `BEGIN:VCARD
   VERSION:3.0
   FN:${person.name}
-  ORG:Digital Forge
+  ORG:${person.organization}
   TEL;TYPE=WORK,VOICE:${person.phone}
   EMAIL;TYPE=WORK,EMAIL:${person.email}
   END:VCARD`;
+    const blob = new Blob([vCardData], { type: "text/x-vcard" });
+    const href = URL.createObjectURL(blob);
 
-    // Build data URL with UTF-8 encoding
-    const url =
-      "data:text/x-vcard;charset=utf-8," + encodeURIComponent(vCardData);
-
-    // Use window.location.href for navigation to initiate the download
-    window.location.href = url;
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = `${person.name}.vcf`; // Ensure person.name is URL friendly
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
   };
 
   return (
