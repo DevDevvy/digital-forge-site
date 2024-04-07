@@ -26,7 +26,7 @@ const EBusinessCard = () => {
   TEL;TYPE=WORK,VOICE:${person.phone}
   EMAIL;TYPE=WORK,EMAIL:${person.email}
   END:VCARD`;
-    const blob = new Blob([vCardData], { type: "text/x-vcard" });
+    const blob = new Blob([vCardData], { type: "text/vcard" });
     const href = URL.createObjectURL(blob);
 
     const link = document.createElement("a");
