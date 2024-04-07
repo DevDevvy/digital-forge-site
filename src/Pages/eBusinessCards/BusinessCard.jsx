@@ -27,25 +27,13 @@ const EBusinessCard = () => {
   TEL;TYPE=WORK,VOICE:${person.phone}
   EMAIL;TYPE=WORK,EMAIL:${person.email}
   END:VCARD`;
-    // Convert the string to a UTF-8 byte array
-    const encoder = new TextEncoder();
-    const uint8Array = encoder.encode(vCardData);
 
-    // Convert the byte array to a Base64 string
-    const base64String = uint8Array.reduce((acc, byte) => {
-      return acc + String.fromCharCode(byte);
-    }, "");
+    // Build data URL with UTF-8 encoding
+    const url =
+      "data:text/x-vcard;charset=utf-8," + encodeURIComponent(vCardData);
 
-    // Use btoa to convert the binary string to Base64
-    const base64VCard = btoa(base64String);
-
-    // Create a data URI for the download
-    const link = document.createElement("a");
-    link.href = `data:text/vcard;base64,${base64VCard}`;
-    link.download = `${name}.vcf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Use window.location.href for navigation to initiate the download
+    window.location.href = url;
   };
 
   return (
