@@ -19,23 +19,13 @@ const EBusinessCard = () => {
   }, []);
 
   const downloadVCard = () => {
-    const vCardData = `BEGIN:VCARD
-  VERSION:3.0
-  FN:${person.name}
-  ORG:${person.organization}
-  TEL;TYPE=WORK,VOICE:${person.phone}
-  EMAIL;TYPE=WORK,EMAIL:${person.email}
-  END:VCARD`;
-    const blob = new Blob([vCardData], { type: "text/vcard" });
-    const href = URL.createObjectURL(blob);
-
     const link = document.createElement("a");
-    link.href = href;
-    link.download = `${person.name}.vcf`; // Ensure person.name is URL friendly
+    link.href = person.vcfFile;
+    link.type = "text/vcard";
+    link.download = `${name}.vcf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(href);
   };
 
   return (
