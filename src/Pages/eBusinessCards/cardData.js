@@ -6,7 +6,7 @@ const cardData = {
         twitter: "https://twitter.com/randalltmusic",
         company: "Digital Forge",
         profileImage: "/src/assets/randall.png",
-        vcfFile: "/src/assets/Randall.vcf",
+        vcfFile: "/src/assets/randall",
     },
     mac: {
         name: "Jane Doe",
