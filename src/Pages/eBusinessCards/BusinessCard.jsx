@@ -6,6 +6,7 @@ import people from "./cardData";
 import emailIcon from "../../assets/email.svg";
 import twitterIcon from "../../assets/twitterLogo.svg";
 import logo from "../../assets/logo.png";
+import linkedinIcon from "../../assets/linkedin.svg";
 
 const EBusinessCard = () => {
   let { name } = useParams();
@@ -80,6 +81,16 @@ const EBusinessCard = () => {
     }
   };
 
+  const createTwitterLink = (username) => {
+    // Detect iOS devices
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    // Use the Twitter app URL scheme on iOS, web URL otherwise
+    return isIOS
+      ? `twitter://user?screen_name=${username}`
+      : `https://twitter.com/${username}`;
+  };
+
   return (
     <>
       <div className={styles.cardParentContainer}>
@@ -116,11 +127,26 @@ const EBusinessCard = () => {
                   ""
                 )}
                 {person.twitter ? (
-                  <a href={person.twitter}>
+                  <a href={createTwitterLink(person.twitter)}>
                     <img
                       src={twitterIcon}
                       className={styles.socialIcon}
                       alt="Twitter"
+                    />
+                  </a>
+                ) : (
+                  ""
+                )}
+                {person.linkedin ? (
+                  <a
+                    href={person.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={linkedinIcon}
+                      className={styles.socialIcon}
+                      alt="LinkedIn"
                     />
                   </a>
                 ) : (

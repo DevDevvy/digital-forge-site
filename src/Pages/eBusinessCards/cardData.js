@@ -1,24 +1,49 @@
-import randallVCF from "../../assets/randall.vcf";
 import randallImage from "../../assets/randall.png";
+import macImage from "../../assets/mac.png";
+import efrainImage from "../../assets/efrain.png";
+import dustinImage from "../../assets/dustin.png";
 const cardData = {
     randall: {
         name: "Randall",
-        title: "CTO/Co-founder",
+        title: "Co-Founder",
         email: "randall@digitalforge-tek.com",
-        twitter: "https://twitter.com/randalltmusic",
+        twitter: "randalltmusic",
         company: "Digital Forge",
+        linkedin: "https://www.linkedin.com/in/randalltmusic/",
         profileImage: randallImage,
-        vcfFile: randallVCF,
         phone: "(555) 555-5555",
     },
     mac: {
-        name: "Jane Doe",
-        title: "Product Manager",
-        company: "Creative Solutions Ltd.",
-        profileImage: "/path/to/jane-doe.jpg",
-        vcfFile: "/path/to/jane-doe.vcf",
+        name: "Mac",
+        title: "Co-Founder",
+        email: "mac@digitalforge-tek.com",
+        twitter: "",
+        company: "Digital Forge",
+        linkedin: "https://www.linkedin.com/in/matthew-mcmorries/",
+        profileImage: macImage,
+        phone: "(555) 555-5555",
     },
-    // Add more people as needed
+    efrain: {
+        name: "Efrain",
+        title: "Co-Founder",
+        email: "efrain@digitalforge-tek.com",
+        twitter: "",
+        company: "Digital Forge",
+        linkedin: "https://www.linkedin.com/in/efrain-s-9854bb237/",
+        profileImage: efrainImage,
+        phone: "(555) 555-5555",
+    },
+    dustin: {
+        name: "Dustin",
+        title: "Co-Founder",
+        email: "dustin@digitalforge-tek.com",
+        twitter: "",
+        company: "Digital Forge",
+        linkedin: "https://www.linkedin.com/in/dsmiddie3/",
+        profileImage: dustinImage,
+        phone: "(555) 555-5555",
+    },
+
 };
 
 export default cardData;
