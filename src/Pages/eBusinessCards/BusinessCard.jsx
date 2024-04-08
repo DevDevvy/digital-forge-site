@@ -20,13 +20,29 @@ const EBusinessCard = () => {
   }, []);
 
   const downloadVCard = () => {
-    const link = document.createElement("a");
-    link.href = person.vcfFile;
-    link.type = "text/vcard";
-    link.download = `${origName}.vcf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Example vCard data
+    var vCardData = `BEGIN:VCARD
+        VERSION:3.0
+        FN:${name}
+        ORG:${person.company}
+        TEL;TYPE=WORK,VOICE:${person.phone}
+        EMAIL;TYPE=PREF,INTERNET:${person.email}
+        END:VCARD`;
+
+    // Create a Blob with the vCard data
+    var blob = new Blob([vCardData], { type: "text/vcard" });
+
+    // Create an object URL for the Blob
+    var url = window.URL.createObjectURL(blob);
+
+    // Create a temporary anchor element and trigger the download
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = `${origName}.vcf`;
+    document.body.appendChild(a); // Required for Firefox
+    a.click();
+    window.URL.revokeObjectURL(url); // Clean up
+    a.remove(); // Remove the element
   };
 
   return (

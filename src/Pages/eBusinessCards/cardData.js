@@ -8,6 +8,7 @@ const cardData = {
         company: "Digital Forge",
         profileImage: "../../assets/randall.png",
         vcfFile: "../../assets/randall.vcf",
+        phone: "(555) 555-5555",
     },
     mac: {
         name: "Jane Doe",
