@@ -20,20 +20,64 @@ const EBusinessCard = () => {
   }, []);
 
   const downloadVCard = (person) => {
-    // Create a Blob with the vCard data
-    const blob = new Blob([person.vcfFile], { type: "text/vcard" });
-    const url = URL.createObjectURL(blob);
-    console.log(url);
-    // Create a temporary anchor element and trigger download
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = `${origName}.vcf`;
-    document.body.appendChild(anchor);
-    anchor.click();
+    // Ensure person data is provided
+    if (!person) {
+      console.error("No person data provided for vCard.");
+      return;
+    }
 
-    // Clean up
-    document.body.removeChild(anchor);
-    URL.revokeObjectURL(url);
+    const { name = "", company = "", phone = "", email = "" } = person;
+
+    // Properly format the vCard data to ensure compatibility
+    const vCardData = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      `FN:${name}`,
+      `ORG:${company}`,
+      `TEL;TYPE=WORK,VOICE:${phone}`,
+      `EMAIL;TYPE=PREF,INTERNET:${email}`,
+      "END:VCARD",
+    ].join("\r\n");
+
+    // Detect iOS devices
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    if (isIOS) {
+      // For iOS, instead of hosting a static .vcf file, dynamically create a Blob and use a Data URI
+      const blob = new Blob([vCardData], {
+        type: "text/x-vcard;charset=utf-8",
+      });
+      const url = URL.createObjectURL(blob);
+
+      // Create an anchor and simulate a click to download
+      const a = document.createElement("a");
+      a.style.display = "none";
+      a.href = url;
+      a.download = `${origName}.vcf`; // Use the person's name for the file name
+
+      document.body.appendChild(a);
+      a.click();
+
+      // Cleanup
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } else {
+      // For non-iOS browsers, follow the Blob and Object URL approach
+      const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${name}.vcf`;
+
+      // Append to the document and trigger download
+      document.body.appendChild(a);
+      a.click();
+
+      // Cleanup
+      window.URL.revokeObjectURL(url);
+      a.remove();
+    }
   };
 
   return (
