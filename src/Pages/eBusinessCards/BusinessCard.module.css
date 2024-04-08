@@ -84,7 +84,10 @@
 
 #companyName {
   font-weight: bold;
+  position: absolute;
+  top: 2em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  z-index: 1;
 }
 .profile {
   display: flex;
@@ -99,6 +102,7 @@
   border-radius: 50%;
   object-fit: cover; /* Ensures the image is nicely cropped */
   box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .download {
@@ -142,4 +146,11 @@
   object-fit: cover;
   height: auto;
   width: 100%;
+}
+
+.sphereContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }

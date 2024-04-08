@@ -7,6 +7,7 @@ import emailIcon from "../../assets/email.svg";
 import twitterIcon from "../../assets/twitterLogo.svg";
 import logo from "../../assets/logo.png";
 import linkedinIcon from "../../assets/linkedin.svg";
+import SphereAnimation from "../../Components/SphereAnimation/SphereAnimation";
 
 const EBusinessCard = () => {
   let { name } = useParams();
@@ -101,6 +102,7 @@ const EBusinessCard = () => {
               <img id={styles.cardLogo} src={logo} alt="Company Logo" />
             </div>
             <div className={styles.back}>
+              <SphereAnimation />
               <div className={styles.profile}>
                 <h1 id={styles.companyName}>{person.company}</h1>
                 <img
