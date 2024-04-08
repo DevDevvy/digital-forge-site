@@ -102,7 +102,7 @@ const EBusinessCard = () => {
             </div>
             <div className={styles.back}>
               <div className={styles.profile}>
-                <h1>{person.company}</h1>
+                <h1 id={styles.companyName}>{person.company}</h1>
                 <img
                   src={person.profileImage}
                   alt={`${name}'s profile`}
