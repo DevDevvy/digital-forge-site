@@ -1,4 +1,5 @@
 import randallVCF from "../../assets/randall.vcf";
+import randallImage from "../../assets/randall.png";
 const cardData = {
     randall: {
         name: "Randall",
@@ -6,7 +7,7 @@ const cardData = {
         email: "randall@digitalforge-tek.com",
         twitter: "https://twitter.com/randalltmusic",
         company: "Digital Forge",
-        profileImage: "../../assets/randall.png",
+        profileImage: randallImage,
         vcfFile: randallVCF,
         phone: "(555) 555-5555",
     },
