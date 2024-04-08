@@ -19,30 +19,49 @@ const EBusinessCard = () => {
     setTimeout(() => setIsFlipped(true), 2000); // Flips card
   }, []);
 
-  const downloadVCard = () => {
-    // Example vCard data
-    var vCardData = `BEGIN:VCARD
-        VERSION:3.0
-        FN:${name}
-        ORG:${person.company}
-        TEL;TYPE=WORK,VOICE:${person.phone}
-        EMAIL;TYPE=PREF,INTERNET:${person.email}
-        END:VCARD`;
+  const downloadVCard = (person) => {
+    // Ensure person data is provided
+    if (!person) {
+      console.error("No person data provided for vCard.");
+      return;
+    }
+
+    // Destructure for easier access and default values to avoid undefined in vCard
+    const { name = "", company = "", phone = "", email = "" } = person;
+
+    // Properly format the vCard data to ensure compatibility
+    const vCardData = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      `FN:${name}`,
+      `ORG:${company}`,
+      `TEL;TYPE=WORK,VOICE:${phone}`,
+      `EMAIL;TYPE=PREF,INTERNET:${email}`,
+      "END:VCARD",
+    ].join("\r\n"); // Use \r\n as a line separator to comply with vCard standard
 
     // Create a Blob with the vCard data
-    var blob = new Blob([vCardData], { type: "text/vcard" });
+    const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
 
-    // Create an object URL for the Blob
-    var url = window.URL.createObjectURL(blob);
+    // Use a more compatible method for handling the download
+    if (window.navigator.msSaveOrOpenBlob) {
+      // IE and Edge
+      window.navigator.msSaveOrOpenBlob(blob, `${origName}.vcf`);
+    } else {
+      // Other browsers
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${origName}.vcf`;
 
-    // Create a temporary anchor element and trigger the download
-    var a = document.createElement("a");
-    a.href = url;
-    a.download = `${origName}.vcf`;
-    document.body.appendChild(a); // Required for Firefox
-    a.click();
-    window.URL.revokeObjectURL(url); // Clean up
-    a.remove(); // Remove the element
+      // Append to the body temporarily to handle Firefox's requirements
+      document.body.appendChild(a);
+      a.click();
+
+      // Clean up
+      window.URL.revokeObjectURL(url);
+      a.remove();
+    }
   };
 
   return (
