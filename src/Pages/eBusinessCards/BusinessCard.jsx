@@ -9,6 +9,7 @@ import logo from "../../assets/logo.png";
 
 const EBusinessCard = () => {
   let { name } = useParams();
+  let origName = name;
   const person = people[name.toLowerCase()];
   name = name.charAt(0).toUpperCase() + name.slice(1);
 
@@ -22,7 +23,7 @@ const EBusinessCard = () => {
     const link = document.createElement("a");
     link.href = person.vcfFile;
     link.type = "text/vcard";
-    link.download = `${name}.vcf`;
+    link.download = `${origName}.vcf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

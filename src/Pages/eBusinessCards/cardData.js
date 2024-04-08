@@ -1,3 +1,4 @@
+
 const cardData = {
     randall: {
         name: "Randall",
@@ -5,8 +6,8 @@ const cardData = {
         email: "randall@digitalforge-tek.com",
         twitter: "https://twitter.com/randalltmusic",
         company: "Digital Forge",
-        profileImage: "/src/assets/randall.png",
-        vcfFile: "/src/assets/randall.vcf",
+        profileImage: "../../assets/randall.png",
+        vcfFile: "../../assets/randall.vcf",
     },
     mac: {
         name: "Jane Doe",
