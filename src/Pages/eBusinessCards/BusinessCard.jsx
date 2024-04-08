@@ -26,7 +26,6 @@ const EBusinessCard = () => {
       return;
     }
 
-    // Destructure for easier access and default values to avoid undefined in vCard
     const { name = "", company = "", phone = "", email = "" } = person;
 
     // Properly format the vCard data to ensure compatibility
@@ -38,31 +37,51 @@ const EBusinessCard = () => {
       `TEL;TYPE=WORK,VOICE:${phone}`,
       `EMAIL;TYPE=PREF,INTERNET:${email}`,
       "END:VCARD",
-    ].join("\r\n"); // Use \r\n as a line separator to comply with vCard standard
+    ].join("\r\n");
+
+    // Detect iOS devices
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     // Create a Blob with the vCard data
     const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
 
-    // Use a more compatible method for handling the download
     if (window.navigator.msSaveOrOpenBlob) {
       // IE and Edge
-      window.navigator.msSaveOrOpenBlob(blob, `${origName}.vcf`);
+      window.navigator.msSaveOrOpenBlob(blob, `${name}.vcf`);
+    } else if (isIOS) {
+      // For iOS devices, instead of direct download, guide users to add manually or use an alternative approach
+      // Optionally, create a temporary DOM element to show instructions or a link to the vCard
+      showIOSDownloadInstructions(blob, origName);
     } else {
       // Other browsers
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${origName}.vcf`;
+      a.download = `${name}.vcf`;
 
-      // Append to the body temporarily to handle Firefox's requirements
       document.body.appendChild(a);
       a.click();
 
-      // Clean up
       window.URL.revokeObjectURL(url);
       a.remove();
     }
   };
+
+  // Function to handle iOS-specific download instructions or alternatives
+  function showIOSDownloadInstructions(blob, fileName) {
+    // For demonstration: alert the user. Implement a more sophisticated method as needed.
+    alert(
+      "iOS detected. Due to browser limitations, direct downloads are not supported on iOS. Please check your downloads folder or use an alternative method."
+    );
+
+    // Example: Convert blob to a readable URL and display it in an iframe or prompt the user with a link to open.
+    const url = window.URL.createObjectURL(blob);
+    const iframe = document.getElementById("download_vcard_iframe");
+    iframe.src = url;
+
+    // Other alternatives can include sending the vCard via email or displaying a QR code linking to the vCard.
+  }
 
   return (
     <>
@@ -75,13 +94,17 @@ const EBusinessCard = () => {
             </div>
             <div className={styles.back}>
               <div className={styles.profile}>
+                <h1>{person.company}</h1>
                 <img
                   src={person.profileImage}
                   alt={`${name}'s profile`}
                   className={styles.profileImage}
                 />
-                <h2>{name}</h2>
-                <p>{person.title} at Digital Forge</p>
+                <p className={styles.profile}>
+                  <h2>{name}</h2>
+                  {person.title}
+                  <a href={`tel:${person.phone}`}>{person.phone}</a>
+                </p>
               </div>
               <div className={styles.socialDiv}>
                 {person.email ? (

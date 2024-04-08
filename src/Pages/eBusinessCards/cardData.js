@@ -2,7 +2,7 @@
 const cardData = {
     randall: {
         name: "Randall",
-        title: "CTO",
+        title: "CTO/Co-founder",
         email: "randall@digitalforge-tek.com",
         twitter: "https://twitter.com/randalltmusic",
         company: "Digital Forge",
