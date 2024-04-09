@@ -47,23 +47,33 @@ const EBusinessCard = () => {
 
     if (isIOS) {
       // For iOS, instead of hosting a static .vcf file, dynamically create a Blob and use a Data URI
-      const blob = new Blob([vCardData], {
-        type: "text/x-vcard;charset=utf-8",
-      });
-      const url = URL.createObjectURL(blob);
+      try {
+        const blob = new Blob([vCardData], {
+          type: "text/x-vcard;charset=utf-8",
+        });
+        const url = URL.createObjectURL(blob);
 
-      // Create an anchor and simulate a click to download
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = url;
-      a.download = `${origName}.vcf`; // Use the person's name for the file name
+        // Create an anchor and simulate a click to download
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = `${origName}.vcf`; // Use the person's name for the file name
 
-      document.body.appendChild(a);
-      a.click();
+        document.body.appendChild(a);
+        a.click();
 
-      // Cleanup
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+        // Cleanup
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        // Fallback to window.location.href method if Blob creation fails
+        console.error("Failed to create vCard for iOS:", error);
+        const blob = new Blob([vCardData], {
+          type: "text/x-vcard;charset=utf-8",
+        });
+        const url = URL.createObjectURL(blob);
+        window.location.href = url;
+      }
     } else {
       // For non-iOS browsers, follow the Blob and Object URL approach
       const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
