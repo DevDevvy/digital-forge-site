@@ -3,6 +3,10 @@ export const createVCardBlob = (vCardData) => {
     return new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
 };
 
+function isFirefox() {
+    return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+}
+
 export const downloadVCard = (person) => {
     if (!person) {
         console.error("No person data provided for vCard.");
@@ -23,7 +27,7 @@ export const downloadVCard = (person) => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     const filename = `${name.replace(/\s+/g, '_')}.vcf`;
 
-    if (isIOS) {
+    if (isIOS && !isFirefox()) {
         // For iOS, use a hidden iframe or open the vCard in a new window as direct downloads are not supported
         try {
             const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
