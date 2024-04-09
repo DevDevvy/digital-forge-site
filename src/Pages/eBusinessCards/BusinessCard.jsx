@@ -8,7 +8,7 @@ import twitterIcon from "../../assets/twitterLogo.svg";
 import logo from "../../assets/logo.png";
 import linkedinIcon from "../../assets/linkedin.svg";
 import SphereAnimation from "../../Components/SphereAnimation/SphereAnimation";
-import { downloadVCard } from "./cardUtils";
+import { downloadVCard, createTwitterLink } from "./cardUtils";
 
 const EBusinessCard = () => {
   let { name } = useParams();
@@ -93,15 +93,15 @@ const EBusinessCard = () => {
   //   }
   // };
 
-  const createTwitterLink = (username) => {
-    // Detect iOS devices
-    const isIOS =
-      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    // Use the Twitter app URL scheme on iOS, web URL otherwise
-    return isIOS
-      ? `twitter://user?screen_name=${username}`
-      : `https://twitter.com/${username}`;
-  };
+  // const createTwitterLink = (username) => {
+  //   // Detect iOS devices
+  //   const isIOS =
+  //     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  //   // Use the Twitter app URL scheme on iOS, web URL otherwise
+  //   return isIOS
+  //     ? `twitter://user?screen_name=${username}`
+  //     : `https://twitter.com/${username}`;
+  // };
 
   return (
     <>

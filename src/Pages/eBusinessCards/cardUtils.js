@@ -30,10 +30,22 @@ export const downloadVCard = (person) => {
     if (isIOS && !isFirefox()) {
         // For iOS, use a hidden iframe or open the vCard in a new window as direct downloads are not supported
         try {
-            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
+            const blob = new Blob([vCardData], {
+                type: "text/x-vcard;charset=utf-8",
+            });
             const url = URL.createObjectURL(blob);
-            // Open in a new window for iOS as a workaround
-            window.open(url, '_blank');
+
+            // Create an anchor and simulate a click to download
+            const a = document.createElement("a");
+            a.style.display = "none";
+            a.href = url;
+            a.download = `${name}.vcf`;
+
+            document.body.appendChild(a);
+            a.click();
+
+            // Cleanup
+            document.body.removeChild(a);
             URL.revokeObjectURL(url);
         } catch (error) {
             console.error("Failed to prepare vCard for iOS:", error);
