@@ -28,7 +28,7 @@
   position: relative;
   width: 138px;
   height: 138px;
-  border: double 9px #d29069;
+  border: solid 9px #d29069;
   border-radius: 50%;
   border-right-color: rgb(32, 94, 125);
   border-bottom-color: transparent;
@@ -146,35 +146,25 @@
   z-index: 70;
 }
 @media (max-width: 500px) {
-  .profile-photo {
-    width: 7rem;
-    position: relative;
-    z-index: -10;
-    overflow: hidden;
-    animation: rotate-none 9s linear infinite;
-  }
-  .photo-ring {
-    width: 100px;
-    position: relative;
-    height: 100px;
-    z-index: 20;
-  }
   .photo-ring::before,
   .photo-ring::after {
     border: solid 2px transparent;
     position: relative;
-    z-index: 10;
+    z-index: 5;
   }
-  .photo-ring::after-2 {
-    border: solid 3px transparent;
-    position: relative;
-    z-index: 20;
+  .photo-ring {
+    border: solid 5px #e359368c;
+    border-radius: 50%;
+    border-right-color: rgb(32, 94, 125);
+    border-bottom-color: transparent;
+    animation: rotate-clockwise 9s linear infinite;
+    z-index: 9;
   }
   .profile-name {
     font-size: 0.5rem;
+    z-index: 10;
   }
   .photo-frame {
     margin: 0.5em;
-    z-index: 3;
   }
 }
