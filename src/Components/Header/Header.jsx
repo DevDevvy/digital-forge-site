@@ -30,10 +30,10 @@ const Header = ({ toggleDarkMode, darkMode }) => {
   return (
     <div id="fixed-header">
       <div id="header">
-        <label className="switch">
+        {/* <label className="switch">
           <input type="checkbox" onChange={toggleDarkMode} />
           <span className="slider round"></span>
-        </label>
+        </label> */}
         <h2 id="title" ref={titleRef}>
           DIGITAL FORGE
         </h2>

@@ -188,6 +188,11 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .mission-container {
+    flex-direction: column;
+  }
+}
 @media (max-width: 900px) {
   .quote {
     font-size: 14px;
