@@ -8,9 +8,10 @@
   position: inherit;
   width: 150px; /* Reduced from 150px */
   aspect-ratio: 1/1;
-  margin-top: 2em;
+  margin-top: 8em;
   z-index: -5;
   rotate: 1 0 0 15deg;
+  transform: scale(0.5); /* Adjusted from 0.5 */
   transform-style: preserve-3d;
   animation: rotate 20s linear infinite 6s;
 }

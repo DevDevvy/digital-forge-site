@@ -22,87 +22,6 @@ const EBusinessCard = () => {
     setTimeout(() => setIsFlipped(true), 2000); // Flips card
   }, []);
 
-  // const downloadVCard = (person) => {
-  //   // Ensure person data is provided
-  //   if (!person) {
-  //     console.error("No person data provided for vCard.");
-  //     return;
-  //   }
-
-  //   const { name = "", company = "", phone = "", email = "" } = person;
-
-  //   // Properly format the vCard data to ensure compatibility
-  //   const vCardData = [
-  //     "BEGIN:VCARD",
-  //     "VERSION:3.0",
-  //     `FN:${name}`,
-  //     `ORG:${company}`,
-  //     `TEL;TYPE=WORK,VOICE:${phone}`,
-  //     `EMAIL;TYPE=PREF,INTERNET:${email}`,
-  //     "END:VCARD",
-  //   ].join("\r\n");
-
-  //   // Detect iOS devices
-  //   const isIOS =
-  //     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-  //   if (isIOS) {
-  //     // For iOS, instead of hosting a static .vcf file, dynamically create a Blob and use a Data URI
-  //     try {
-  //       const blob = new Blob([vCardData], {
-  //         type: "text/x-vcard;charset=utf-8",
-  //       });
-  //       const url = URL.createObjectURL(blob);
-
-  //       // Create an anchor and simulate a click to download
-  //       const a = document.createElement("a");
-  //       a.style.display = "none";
-  //       a.href = url;
-  //       a.download = `${origName}.vcf`; // Use the person's name for the file name
-
-  //       document.body.appendChild(a);
-  //       a.click();
-
-  //       // Cleanup
-  //       document.body.removeChild(a);
-  //       URL.revokeObjectURL(url);
-  //     } catch (error) {
-  //       // Fallback to window.location.href method if Blob creation fails
-  //       console.error("Failed to create vCard for iOS:", error);
-  //       const blob = new Blob([vCardData], {
-  //         type: "text/x-vcard;charset=utf-8",
-  //       });
-  //       const url = URL.createObjectURL(blob);
-  //       window.location.href = url;
-  //     }
-  //   } else {
-  //     // For non-iOS browsers, follow the Blob and Object URL approach
-  //     const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
-  //     const url = window.URL.createObjectURL(blob);
-  //     const a = document.createElement("a");
-  //     a.href = url;
-  //     a.download = `${name}.vcf`;
-
-  //     // Append to the document and trigger download
-  //     document.body.appendChild(a);
-  //     a.click();
-
-  //     // Cleanup
-  //     window.URL.revokeObjectURL(url);
-  //     a.remove();
-  //   }
-  // };
-
-  // const createTwitterLink = (username) => {
-  //   // Detect iOS devices
-  //   const isIOS =
-  //     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  //   // Use the Twitter app URL scheme on iOS, web URL otherwise
-  //   return isIOS
-  //     ? `twitter://user?screen_name=${username}`
-  //     : `https://twitter.com/${username}`;
-  // };
-
   return (
     <>
       <div className={styles.cardParentContainer}>
@@ -127,6 +46,7 @@ const EBusinessCard = () => {
                   <a href={`tel:${person.phone}`}>{person.phone}</a>
                 </p>
               </div>
+              <p className={styles.about}> {person.about}</p>
               <div className={styles.socialDiv}>
                 {person.email ? (
                   <a href={`mailto:${person.email}`}>

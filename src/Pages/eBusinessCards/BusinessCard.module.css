@@ -88,12 +88,12 @@
   top: 2em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   z-index: 1;
+  margin: 0;
 }
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .profileImage {
@@ -103,12 +103,17 @@
   object-fit: cover; /* Ensures the image is nicely cropped */
   box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.5);
   z-index: 1;
+  position: relative;
 }
 
 .download {
   text-align: center;
 }
-
+.about {
+  padding: 2em;
+  font-size: x-small;
+  text-align: center;
+}
 .downloadButton {
   padding: 10px 20px;
   border-radius: 20px;
@@ -128,13 +133,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 1em;
 }
 
 .socialIcon {
   height: 2em;
   margin: 5px;
   filter: invert(70%);
+  margin-bottom: 5em;
 }
 
 * {

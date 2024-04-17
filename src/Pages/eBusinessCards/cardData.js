@@ -4,7 +4,7 @@ import efrainImage from "../../assets/efrain.png";
 import dustinImage from "../../assets/dustin.png";
 const cardData = {
     randall: {
-        name: "Randall",
+        name: "Randall Thomas",
         title: "Co-Founder",
         email: "randall@digitalforge-tek.com",
         twitter: "randalltmusic",
@@ -12,19 +12,21 @@ const cardData = {
         linkedin: "https://www.linkedin.com/in/randalltmusic/",
         profileImage: randallImage,
         phone: "(555) 555-5555",
+        about: "Randall is a co-founder of Digital Forge and has a background in music production and software development. He is passionate about creating innovative solutions for businesses of all sizes, with a special focus on startups and small businesses. In his free time Randall enjoys developing AI platforms, singing and writing, and spending time with his partner and daughter.",
     },
     mac: {
-        name: "Mac",
+        name: "Mac McMorries",
         title: "Co-Founder",
-        email: "mac@digitalforge-tek.com",
+        email: "matthew@digitalforge-tek.com",
         twitter: "",
         company: "Digital Forge",
         linkedin: "https://www.linkedin.com/in/matthew-mcmorries/",
         profileImage: macImage,
         phone: "(555) 555-5555",
+        about: "Mac is a co-founder of Digital Forge and has a background in software development and is a decorated veteran. He is passionate about creating secure, scalable infrastructure solutions for businesses of all sizes, specializing in startups and small businesses. In his free time Mac enjoys building AI platforms, hiking and fishing, and spending time with his partner and son.",
     },
     efrain: {
-        name: "Efrain",
+        name: "Efrain Santiago, MBA",
         title: "Co-Founder",
         email: "efrain@digitalforge-tek.com",
         twitter: "",
@@ -32,9 +34,10 @@ const cardData = {
         linkedin: "https://www.linkedin.com/in/efrain-s-9854bb237/",
         profileImage: efrainImage,
         phone: "(555) 555-5555",
+        about: "Efrain is a co-founder of Digital Forge and has a background in finance and accounting. He is passionate about supporting businesses and individuals in gaining financial independence and freedom with a focus on compliance. In his free time Efrain enjoys collecting certifications and degrees, curating an impressive shoe collection, and spending time with his partner and grand children.",
     },
     dustin: {
-        name: "Dustin",
+        name: "Dustin Smiddie",
         title: "Co-Founder",
         email: "dustin@digitalforge-tek.com",
         twitter: "",
@@ -42,6 +45,7 @@ const cardData = {
         linkedin: "https://www.linkedin.com/in/dsmiddie3/",
         profileImage: dustinImage,
         phone: "(555) 555-5555",
+        about: "Dustin is a co-founder of Digital Forge and has a background in networking and IT project management. He is passionate about building teams of people and networks for communications. In his free time Dustin enjoys studying military history, inventing new technologies, and spending time with his partner and family.",
     },
 
 };
