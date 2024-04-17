@@ -33,7 +33,7 @@
   border-right-color: rgb(42, 127, 169);
   border-bottom-color: transparent;
   animation: rotate-clockwise 9s linear infinite;
-  z-index: 5;
+  z-index: 3;
 }
 
 .photo-ring::before,
@@ -63,9 +63,9 @@
 }
 
 .photo-ring::before {
-  border-top-color: #113352;
+  border-top-color: #113352aa;
   border-right-color: transparent;
-  border-bottom-color: #751616;
+  border-bottom-color: #c96e6e7a;
   /* //make animation clockwise, then counterclockwise */
   /* animation: rotate-clockwise 5s linear infinite; */
   opacity: 90%;
@@ -75,9 +75,9 @@
 }
 
 .photo-ring::after {
-  border-top-color: #208aec;
+  border-top-color: #2089ecb6;
   border-right-color: #803d09db;
-  border-bottom-color: #2c1ce0;
+  border-bottom-color: #3025a696;
   position: absolute;
   /* //make animation clockwise, then counterclockwise */
   /* animation: rotate-clockwise 5s linear infinite; */
@@ -112,7 +112,7 @@
 }
 
 .photo-frame {
-  margin: 1em;
+  margin: 1.5em;
   position: relative;
   transition: transform 0.5s ease; /* Add transition for smooth tilting */
   box-shadow: 8px 9px 10px 11px #29444d;
@@ -128,20 +128,20 @@
 .photo-ring::before:hover,
 .profile-name:hover,
 .photo-ring::after:hover {
-  transform: translateX(20px) translateY(20px) rotate(0); /* Apply reactivetransformation on hover */
+  transform: translateX(10px) translateY(10px) rotate(0); /* Apply reactivetransformation on hover */
 }
 .profile-name {
   position: absolute;
   /* calculate the rotation of the div to keep the name at bottom at all times */
-  top: 0;
-  left: 30%;
+  top: -9em;
+  left: 0;
   transform: translate(-50%, 50%);
   font-weight: bold;
   font-size: 1rem;
   color: #000000;
   bottom: 0;
   animation: rotate-none 9s linear infinite;
-  z-index: 3;
+  z-index: 7;
 }
 @media (max-width: 500px) {
   .profile-photo {

@@ -1,7 +1,6 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import "./HomePage.css";
-import ProfilePhotoFrameGroup from "../Components/ProfilePhotoFrameGroup";
-import ScrollingCarousel from "../Components/ScrollingCarousel";
+import ParallaxHeroImage from "../Components/ParallaxHeroImage/ParallaxHeroImage.jsx";
 import Header from "../Components/Header/Header.jsx";
 import Footer from "../Components/Footer/Footer.jsx";
 import ModalOverlay from "../Components/ModalOverlay.jsx";
@@ -11,6 +10,11 @@ import AboutUsPage from "./AboutUs/AboutUs";
 const HomePage = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const aboutUsRef = useRef(null);
+  const contactFormRef = useRef(null);
+
+  const scrollToRef = (ref) =>
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   const toggleDarkMode = useCallback(() => {
     setDarkMode(!darkMode);
@@ -27,16 +31,19 @@ const HomePage = () => {
   return (
     <div id="page-container" className={`App ${darkMode ? "dark-mode" : ""}`}>
       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <div id="content-container">
+      <ParallaxHeroImage
+        scrollToAbout={() => scrollToRef(aboutUsRef)}
+        scrollToContact={() => scrollToRef(contactFormRef)}
+      />
+      <div id="content-container" ref={aboutUsRef}>
         <AboutUsPage
           handleEmailButtonClick={handleEmailButtonClick}
           handleCloseContactForm={handleCloseContactForm}
           showContactForm={showContactForm}
           isDarkMode={darkMode}
         />
-        <ScrollingCarousel />
-        <ProfilePhotoFrameGroup onClick={handleEmailButtonClick} />
-        <ContactForm showCloseButton={false} />
+        {/* <ProfilePhotoFrameGroup onClick={handleEmailButtonClick} /> */}
+        <ContactForm showCloseButton={false} ref={contactFormRef} />
         <Footer />
       </div>
       {showContactForm && (
