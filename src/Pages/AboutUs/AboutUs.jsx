@@ -21,7 +21,7 @@ const AboutUsPage = ({
             </div>
 
             <div className="paragraph">
-              <h2>DigitalForge - A New Kind of Tech Company.</h2>
+              <h2>Digital Forge - A New Kind of Tech Company.</h2>
               <p>
                 Digital Forge is a collective of professionals who saw too much
                 value in ourselves to stay victim to the whims of a volatile

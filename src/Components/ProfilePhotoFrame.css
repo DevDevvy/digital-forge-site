@@ -26,14 +26,14 @@
 
 .photo-ring {
   position: relative;
-  width: 100px;
-  height: 100px;
-  border: double 6px #2722aa;
+  width: 138px;
+  height: 138px;
+  border: double 9px #d29069;
   border-radius: 50%;
-  border-right-color: rgb(42, 127, 169);
+  border-right-color: rgb(32, 94, 125);
   border-bottom-color: transparent;
   animation: rotate-clockwise 9s linear infinite;
-  z-index: 3;
+  z-index: 9;
 }
 
 .photo-ring::before,
@@ -56,7 +56,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border: solid 7px transparent;
+  border: double 7px transparent;
   border-radius: 50%;
   opacity: calc(1 / 3);
   z-index: 5;
@@ -65,13 +65,13 @@
 .photo-ring::before {
   border-top-color: #113352aa;
   border-right-color: transparent;
-  border-bottom-color: #c96e6e7a;
+  border-bottom-color: #dc8f437a;
   /* //make animation clockwise, then counterclockwise */
   /* animation: rotate-clockwise 5s linear infinite; */
   opacity: 90%;
   position: absolute;
-  animation: rotate-counter-clockwise 5s linear alternate infinite;
-  z-index: 4;
+  animation: rotate-counter-clockwise 5s infinite alternate;
+  z-index: 10;
 }
 
 .photo-ring::after {
@@ -82,8 +82,8 @@
   /* //make animation clockwise, then counterclockwise */
   /* animation: rotate-clockwise 5s linear infinite; */
   opacity: calc(2 / 3);
-  animation: rotate-counter-clockwise 8s linear infinite;
-  z-index: 2;
+  animation: rotate-counter-clockwise 8s linear infinite alternate;
+  z-index: 10;
 }
 
 .profile-photo {
@@ -114,9 +114,10 @@
 .photo-frame {
   margin: 1.5em;
   position: relative;
-  transition: transform 0.5s ease; /* Add transition for smooth tilting */
-  box-shadow: 8px 9px 10px 11px #29444d;
+  transition: transform 0.5s ease-in-out; /* Add transition for smooth tilting */
+  box-shadow: 8px 9px 19px 16px #000000;
   border-radius: 50%;
+  z-index: 3;
 }
 
 .photo-frame:hover {
@@ -133,15 +134,16 @@
 .profile-name {
   position: absolute;
   /* calculate the rotation of the div to keep the name at bottom at all times */
-  top: -9em;
+  top: -10em;
   left: 0;
   transform: translate(-50%, 50%);
   font-weight: bold;
   font-size: 1rem;
-  color: #000000;
+  color: var(--white-text);
+  text-shadow: 1px 1px 2px #000;
   bottom: 0;
   animation: rotate-none 9s linear infinite;
-  z-index: 7;
+  z-index: 70;
 }
 @media (max-width: 500px) {
   .profile-photo {
@@ -152,10 +154,10 @@
     animation: rotate-none 9s linear infinite;
   }
   .photo-ring {
-    width: 80px;
+    width: 100px;
     position: relative;
-    height: 80px;
-    z-index: 2;
+    height: 100px;
+    z-index: 20;
   }
   .photo-ring::before,
   .photo-ring::after {
@@ -169,6 +171,10 @@
     z-index: 20;
   }
   .profile-name {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
+  }
+  .photo-frame {
+    margin: 0.5em;
+    z-index: 3;
   }
 }

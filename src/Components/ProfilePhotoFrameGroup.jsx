@@ -24,9 +24,6 @@ const ProfilePhotoFrameGroup = () => {
           />
         ))}
       </div>
-      <div id="df-branding-profile-photos">
-        Team<br></br>DigitalForge
-      </div>
     </>
   );
 };

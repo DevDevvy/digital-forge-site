@@ -21,8 +21,8 @@
 .spark-layer {
   position: absolute;
   width: 100%;
-  height: 50vw; /* Matching the hero image dimensions */
-  filter: blur(2px) brightness(2.8);
+  height: 55vw; /* Matching the hero image dimensions */
+  filter: blur(1.5px) brightness(3.8) saturate(0.5);
   background-image: url("../../assets/sparks.png"); /* Use your sparks image */
   background-size: contain;
   background-repeat: no-repeat;
@@ -51,7 +51,7 @@
   z-index: 2; /* Adjust z-index as needed */
   position: relative; /* Often necessary for proper positioning of children */
   width: 100%;
-  height: 35vw;
+  height: 40vw;
   margin-top: 4em;
 }
 .navigation-links {
@@ -110,5 +110,8 @@ button {
   }
   button {
     font-size: 0.7em;
+  }
+  .spark-layer {
+    filter: blur(1px) brightness(2.8);
   }
 }
