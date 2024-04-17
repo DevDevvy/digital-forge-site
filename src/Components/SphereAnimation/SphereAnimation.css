@@ -6,14 +6,20 @@
 /* Adjust the sphere size and its position */
 .sphere {
   position: inherit;
-  width: 150px; /* Reduced from 150px */
+  width: 160px;
   aspect-ratio: 1/1;
-  margin-top: 8em;
-  z-index: -5;
+  z-index: -10;
   rotate: 1 0 0 15deg;
-  transform: scale(0.5); /* Adjusted from 0.5 */
   transform-style: preserve-3d;
   animation: rotate 20s linear infinite 6s;
+  margin-top: 8em;
+}
+
+.sphereContainer {
+  position: absolute;
+  width: 50%;
+  height: 130%;
+  transform-style: preserve-3d;
 }
 
 /* Adjust the translate value for the circle container */
@@ -22,7 +28,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  translate: 0 45px 0; /* Adjusted from 70px */
+  translate: 0 40px 0; /* Adjusted from 70px */
 }
 
 /* If necessary, adjust the circle sizes (they are currently set to scale: 0 to 1, so they may not need adjustment) */

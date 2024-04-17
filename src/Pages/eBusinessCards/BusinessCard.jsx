@@ -2,18 +2,19 @@ import styles from "./BusinessCard.module.css"; // Import CSS module
 import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
-import people from "./cardData";
+import { cardData } from "./cardData";
 import emailIcon from "../../assets/email.svg";
 import twitterIcon from "../../assets/twitterLogo.svg";
 import logo from "../../assets/logo.png";
 import linkedinIcon from "../../assets/linkedin.svg";
 import SphereAnimation from "../../Components/SphereAnimation/SphereAnimation";
 import { downloadVCard, createTwitterLink } from "./cardUtils";
+import { ProfilePhotoFrame } from "../../Components/ProfilePhotoFrame";
 
 const EBusinessCard = () => {
   let { name } = useParams();
   // let origName = name;
-  const person = people[name.toLowerCase()];
+  const person = cardData[name.toLowerCase()];
   name = name.charAt(0).toUpperCase() + name.slice(1);
 
   const [isFlipped, setIsFlipped] = useState(false);
@@ -35,11 +36,7 @@ const EBusinessCard = () => {
               <SphereAnimation />
               <div className={styles.profile}>
                 <h1 id={styles.companyName}>{person.company}</h1>
-                <img
-                  src={person.profileImage}
-                  alt={`${name}'s profile`}
-                  className={styles.profileImage}
-                />
+                <ProfilePhotoFrame photo={person.photo} name={""} />
                 <p className={styles.profile}>
                   <h2>{name}</h2>
                   {person.title}
