@@ -215,6 +215,9 @@
   .content-box-1 {
     flex-direction: column;
   }
+  .img-text-header {
+    font-size: 12px;
+  }
   .img-text p {
     font-size: 8px;
     padding: 0;

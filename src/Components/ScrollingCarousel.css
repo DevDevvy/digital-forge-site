@@ -94,3 +94,47 @@
 .next {
   right: 0;
 }
+@media (max-width: 750px) {
+  .carousel {
+    height: 25vh;
+    width: 40vh;
+    margin-top: 1em;
+  }
+  .content p {
+    padding: 0;
+    margin-top: 0;
+  }
+  .content-box-1 {
+    flex-direction: column;
+  }
+  .img-text-header {
+    font-size: 12px;
+  }
+  .img-text p {
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+  }
+  .img-text-container {
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  .photo-text-ul {
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+  }
+  h3 .img-text-header {
+    font-size: 12px;
+  }
+  .mission-container {
+    flex-direction: column;
+    padding: 3px;
+    margin: 3px;
+  }
+}
