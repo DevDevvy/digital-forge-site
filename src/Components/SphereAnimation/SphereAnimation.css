@@ -16,9 +16,11 @@
 }
 
 .sphereContainer {
-  position: absolute;
-  width: 50%;
-  height: 130%;
+  position: inherit;
+  width: 40vw;
+  aspect-ratio: 1/1;
+  z-index: -10;
+  top: 50%;
   transform-style: preserve-3d;
 }
 
