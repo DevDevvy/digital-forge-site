@@ -6,7 +6,21 @@ export const createVCardBlob = (vCardData) => {
 function isFirefox() {
     return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 }
-
+function convertImgToBase64URL(url, callback, outputFormat) {
+    var img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = function () {
+        var canvas = document.createElement('CANVAS'),
+            ctx = canvas.getContext('2d'), dataURL;
+        canvas.height = this.naturalHeight;
+        canvas.width = this.naturalWidth;
+        ctx.drawImage(this, 0, 0);
+        dataURL = canvas.toDataURL(outputFormat);
+        callback(dataURL);
+        canvas = null;
+    };
+    img.src = url;
+}
 export const downloadVCard = (person) => {
     if (!person) {
         console.error("No person data provided for vCard.");
@@ -15,6 +29,10 @@ export const downloadVCard = (person) => {
 
     const { name = "", company = "", phone = "", email = "", cell = "", photo = "" } = person;
 
+    const base64 = convertImgToBase64URL(photo, function (base64Img) {
+        return base64Img;
+    }, 'image/jpeg');
+
     const vCardData = [
         "BEGIN:VCARD",
         "VERSION:3.0",
@@ -22,7 +40,7 @@ export const downloadVCard = (person) => {
         `ORG:${company}`,
         `TEL;TYPE=WORK,VOICE:${phone}`,
         `TEL;TYPE=CELL,VOICE:${cell}`,
-        `PHOTO;TYPE=JPEG;ENCODING=BASE64:${photo}`,
+        `PHOTO;TYPE=JPEG;ENCODING=BASE64:${base64}`,
         `EMAIL;TYPE=PREF,INTERNET:${email}`,
         "END:VCARD",
     ].join("\r\n");
