@@ -12,8 +12,8 @@ function convertImgToBase64URL(url, callback, outputFormat) {
     img.onload = function () {
         var canvas = document.createElement('CANVAS');
         var ctx = canvas.getContext('2d');
-        canvas.height = 512;
-        canvas.width = 512;
+        canvas.height = this.naturalHeight;
+        canvas.width = this.naturalWidth;
         ctx.drawImage(this, 0, 0);
         var dataURL = canvas.toDataURL(outputFormat);
         callback(dataURL);
