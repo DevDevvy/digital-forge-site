@@ -24,7 +24,7 @@ export const cardData = {
         linkedin: "https://www.linkedin.com/in/matthew-mcmorries/",
         photo: macImage,
         phone: "(555) 555-5555",
-        about: "Mac is a co-founder of Digital Forge and has a background in software development and is a decorated veteran. He is passionate about creating secure, scalable infrastructure solutions for businesses of all sizes, specializing in startups and small businesses. In his free time Mac enjoys building AI platforms, hiking and fishing, and spending time with his partner and son.",
+        about: "Mac is a co-founder of Digital Forge, has a background in software development and is a decorated veteran. He is passionate about creating secure, scalable infrastructure solutions for businesses of all sizes, specializing in startups and small businesses. In his free time Mac enjoys building AI platforms, hiking and fishing, and spending time with his partner and son.",
     },
     efrain: {
         name: "Efrain Santiago, MBA",
