@@ -10,17 +10,18 @@ function convertImgToBase64URL(url, callback, outputFormat) {
     var img = new Image();
     img.crossOrigin = 'Anonymous';
     img.onload = function () {
-        var canvas = document.createElement('CANVAS'),
-            ctx = canvas.getContext('2d'), dataURL;
+        var canvas = document.createElement('CANVAS');
+        var ctx = canvas.getContext('2d');
         canvas.height = 512;
         canvas.width = 512;
         ctx.drawImage(this, 0, 0);
-        dataURL = canvas.toDataURL(outputFormat);
+        var dataURL = canvas.toDataURL(outputFormat);
         callback(dataURL);
         canvas = null;
     };
     img.src = url;
 }
+
 export const downloadVCard = (person) => {
     if (!person) {
         console.error("No person data provided for vCard.");
@@ -29,66 +30,54 @@ export const downloadVCard = (person) => {
 
     const { name = "", phone = "", email = "", cell = "", photo = "" } = person;
 
-    const base64 = convertImgToBase64URL(photo, function (base64Img) {
-        return base64Img;
-    }, 'image/png');
+    convertImgToBase64URL(photo, function (base64Img) {
+        const base64EncodedImage = base64Img.substring(base64Img.indexOf(",") + 1); // Removing the prefix to get pure base64 data
+        const vCardData = [
+            "BEGIN:VCARD",
+            "VERSION:3.0",
+            `FN:${name}`,
+            `TITLE:'Co-Founder: Digital Forge`,
+            `TEL;TYPE=WORK,VOICE:${phone}`,
+            `TEL;TYPE=CELL,VOICE:${cell}`,
+            `PHOTO;TYPE=PNG;ENCODING=BASE64:${base64EncodedImage}`,
+            `EMAIL;TYPE=PREF,INTERNET:${email}`,
+            "END:VCARD",
+        ].join("\r\n");
 
-    const vCardData = [
-        "BEGIN:VCARD",
-        "VERSION:3.0",
-        `FN:${name}`,
-        `TITLE:'Co-Founder: Digital Forge`,
-        `TEL;TYPE=WORK,VOICE:${phone}`,
-        `TEL;TYPE=CELL,VOICE:${cell}`,
-        `PHOTO;TYPE=PNG;ENCODING=BASE64:${base64}`,
-        `EMAIL;TYPE=PREF,INTERNET:${email}`,
-        "END:VCARD",
-    ].join("\r\n");
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const filename = `${name.replace(/\s+/g, '_')}.vcf`;
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    const filename = `${name.replace(/\s+/g, '_')}.vcf`;
-
-    if (isIOS && !isFirefox()) {
-        // For iOS, use a hidden iframe or open the vCard in a new window as direct downloads are not supported
         try {
-            const blob = new Blob([vCardData], {
-                type: "text/x-vcard;charset=utf-8",
-            });
+            const blob = createVCardBlob(vCardData);
             const url = URL.createObjectURL(blob);
+            if (isIOS && !isFirefox()) {
+                // iOS-specific download logic
+                const a = document.createElement("a");
+                a.style.display = "none";
+                a.href = url;
+                a.download = `${name}.vcf`;
 
-            // Create an anchor and simulate a click to download
-            const a = document.createElement("a");
-            a.style.display = "none";
-            a.href = url;
-            a.download = `${name}.vcf`;
+                document.body.appendChild(a);
+                a.click();
 
-            document.body.appendChild(a);
-            a.click();
-
-            // Cleanup
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            } else {
+                // Standard download logic for non-iOS devices
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            }
         } catch (error) {
-            console.error("Failed to prepare vCard for iOS:", error);
-            // If Blob creation fails, fallback to an alternate method if available
+            console.error("Failed to download vCard:", error);
         }
-    } else {
-        // Standard Blob download for non-iOS devices
-        try {
-            const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8" });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            a.remove();
-        } catch (error) {
-            console.error("Failed to download vCard for non-iOS device:", error);
-        }
-    }
+    }, 'image/png');
 };
+
 
 
 export const createTwitterLink = (username) => {
