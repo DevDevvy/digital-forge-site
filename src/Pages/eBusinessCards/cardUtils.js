@@ -13,13 +13,16 @@ export const downloadVCard = (person) => {
         return;
     }
 
-    const { name = "", company = "", phone = "", email = "" } = person;
+    const { name = "", company = "", phone = "", email = "", cell = "", photo = "" } = person;
+
     const vCardData = [
         "BEGIN:VCARD",
         "VERSION:3.0",
         `FN:${name}`,
         `ORG:${company}`,
         `TEL;TYPE=WORK,VOICE:${phone}`,
+        `TEL;TYPE=CELL,VOICE:${cell}`,
+        `PHOTO;TYPE=JPEG;ENCODING=BASE64:${photo}`,
         `EMAIL;TYPE=PREF,INTERNET:${email}`,
         "END:VCARD",
     ].join("\r\n");

@@ -1,21 +1,8 @@
 // src/components/SphereAnimation.jsx
-import React, { useEffect } from "react";
+
 import "./SphereAnimation.css"; // Assuming you'll move the CSS here
 
 const SphereAnimation = () => {
-  // JS logic for the dark mode toggle
-  useEffect(() => {
-    const useDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-    function toggleDarkMode(state) {
-      document.documentElement.classList.toggle("darkMode", state);
-    }
-
-    toggleDarkMode(useDark.matches);
-
-    useDark.addListener((evt) => toggleDarkMode(evt.matches));
-  }, []);
-
   // JSX structure converted from your provided HTML
   return (
     <div className="sphereContainer">

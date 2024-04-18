@@ -40,10 +40,15 @@ const EBusinessCard = () => {
                     <h1 id={styles.companyName}>{person.company}</h1>
                   </a>
                   <ProfilePhotoFrame photo={person.photo} name={""} />
-                  <h2>{person.name}</h2>
                   <p className={styles.profile}>
+                    <h2>{person.name}</h2>
                     {person.title}
-                    <a href={`tel:${person.phone}`}>{person.phone}</a>
+                    <div className={styles.work}>
+                      WORK:<a href={`tel:${person.phone}`}>{person.phone}</a>
+                    </div>
+                    <div className={styles.cell}>
+                      CELL:<a href={`tel:${person.cell}`}>{person.cell}</a>
+                    </div>
                   </p>
                 </div>
                 <p className={styles.about}> {person.about}</p>

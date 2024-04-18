@@ -43,9 +43,9 @@
   rotate: 1 0 0 -90deg;
   scale: 0;
   animation:
-    oscillateScale 2s ease infinite alternate,
-    oscillateTranslate 4s linear infinite alternate,
-    renderOpacity 0.2s linear infinite;
+    oscillateScale 2s ease infinite alternate calc(0s + 6s),
+    oscillateTranslate 4s linear infinite alternate calc(0s + 6s),
+    renderOpacity 0.2s linear infinite calc(0s + 6s);
 }
 
 /* Adjust the after pseudo-element if necessary */
@@ -135,8 +135,8 @@
     );
   width: 0%;
   animation:
-    render 0.2s linear infinite,
-    revealWidth 1s linear forwards;
+    render 0.2s linear infinite calc(0s + 6s),
+    revealWidth 1s linear forwards calc(0s + 6s);
 }
 .sphere .line::after {
   content: "";
