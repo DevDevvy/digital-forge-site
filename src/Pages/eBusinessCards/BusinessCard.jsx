@@ -44,10 +44,10 @@ const EBusinessCard = () => {
                     <h2>{person.name}</h2>
                     {person.title}
                     <div className={styles.work}>
-                      WORK:<a href={`tel:${person.phone}`}>{person.phone}</a>
+                      WORK: <a href={`tel:${person.phone}`}>{person.phone}</a>
                     </div>
                     <div className={styles.cell}>
-                      CELL:<a href={`tel:${person.cell}`}>{person.cell}</a>
+                      CELL: <a href={`tel:${person.cell}`}>{person.cell}</a>
                     </div>
                   </p>
                 </div>
