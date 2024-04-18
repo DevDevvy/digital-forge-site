@@ -19,9 +19,9 @@
 }
 
 .cardContainer {
-  width: 50vh;
-  max-width: 90%; /* Ensure it doesn't overflow on small screens */
-  height: 90vh;
+  width: 90vw;
+  max-width: 500px; /* Ensure it doesn't overflow on small screens */
+  height: 80vh;
   perspective: 1500px;
   transition:
     transform 0.5s,
@@ -85,10 +85,10 @@
 
 #companyName {
   font-weight: bold;
-  color: var(--white-text);
+  color: rgba(255, 85, 0, 0.495);
   /* make link text blue */
   position: relative;
-  top: -1em;
+  top: -2vw;
   font-size: 2em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin: 0;
@@ -123,8 +123,9 @@
   text-align: center;
 }
 .about {
-  font-size: x-small;
-  width: 25em;
+  font-size: small;
+  width: 70vw;
+  max-width: 300px;
   text-align: center;
   text-align: justify;
   text-align-last: justify;
@@ -145,6 +146,7 @@
   cursor: pointer;
   transition: background-color 0.3s; /* Smooth transition for hover effect */
   box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3em;
 }
 
 .socialDiv {
