@@ -19,9 +19,9 @@
 }
 
 .cardContainer {
-  width: 40vh;
+  width: 50vh;
   max-width: 90%; /* Ensure it doesn't overflow on small screens */
-  height: 600px;
+  height: 90vh;
   perspective: 1500px;
   transition:
     transform 0.5s,
@@ -85,13 +85,17 @@
 
 #companyName {
   font-weight: bold;
-  text-shadow: 1px 1px 2px #db5914c4;
-  position: absolute;
-  top: 1em;
+  color: var(--white-text);
+  /* make link text blue */
+  position: relative;
+  top: -1em;
+  font-size: 2em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  z-index: 1;
   margin: 0;
+  margin-bottom: 0.5em;
+  text-decoration: none;
 }
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -120,31 +124,35 @@
 }
 .about {
   font-size: x-small;
-  padding: 0 3em;
+  width: 25em;
   text-align: center;
+  text-align: justify;
+  text-align-last: justify;
+  margin: 2em 0;
 }
+
 .downloadButton {
   padding: 10px 20px;
   border-radius: 20px;
   border: none;
-  margin-top: 1em;
-  background-color: #007bff;
+  background-image: radial-gradient(
+    ellipse at center,
+    #1d6177 0%,
+    #253c5a 50%,
+    #0d1842 100%
+  );
   color: white;
   cursor: pointer;
   transition: background-color 0.3s; /* Smooth transition for hover effect */
   box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
-.downloadButton:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-}
-
 .socialDiv {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  position: absolute;
-  bottom: -3em;
+  justify-content: space-between;
+  position: relative;
+  height: auto;
 }
 
 .socialIcon {

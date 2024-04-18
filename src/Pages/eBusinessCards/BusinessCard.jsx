@@ -15,7 +15,6 @@ const EBusinessCard = () => {
   let { name } = useParams();
   // let origName = name;
   const person = cardData[name.toLowerCase()];
-  name = name.charAt(0).toUpperCase() + name.slice(1);
 
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -35,10 +34,12 @@ const EBusinessCard = () => {
             <div className={styles.back}>
               <SphereAnimation />
               <div className={styles.profile}>
-                <h1 id={styles.companyName}>{person.company}</h1>
+                <a href="https://digitalforge-tek.com" alt="Digital Forge link">
+                  <h1 id={styles.companyName}>{person.company}</h1>
+                </a>
                 <ProfilePhotoFrame photo={person.photo} name={""} />
+                <h2>{person.name}</h2>
                 <p className={styles.profile}>
-                  <h2>{name}</h2>
                   {person.title}
                   <a href={`tel:${person.phone}`}>{person.phone}</a>
                 </p>

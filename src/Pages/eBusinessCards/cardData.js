@@ -6,7 +6,7 @@ import dustinImage from "../../assets/dustin.png";
 export const cardData = {
     randall: {
         name: "Randall Thomas",
-        title: "Co-Founder",
+        title: "Co-Founder/Engineer",
         email: "randall@digitalforge-tek.com",
         twitter: "randalltmusic",
         company: "Digital Forge",
@@ -17,7 +17,7 @@ export const cardData = {
     },
     mac: {
         name: "Mac McMorries",
-        title: "Co-Founder",
+        title: "Co-Founder/Engineer",
         email: "matthew@digitalforge-tek.com",
         twitter: "",
         company: "Digital Forge",
@@ -28,7 +28,7 @@ export const cardData = {
     },
     efrain: {
         name: "Efrain Santiago, MBA",
-        title: "Co-Founder",
+        title: "Co-Founder/Accountant",
         email: "efrain@digitalforge-tek.com",
         twitter: "",
         company: "Digital Forge",
@@ -39,7 +39,7 @@ export const cardData = {
     },
     dustin: {
         name: "Dustin Smiddie",
-        title: "Co-Founder",
+        title: "Co-Founder/IT Specialist",
         email: "dustin@digitalforge-tek.com",
         twitter: "",
         company: "Digital Forge",
@@ -51,8 +51,8 @@ export const cardData = {
 
 };
 export const profiles = [
-    { photo: macImage, name: "Mac" },
-    { photo: randallImage, name: "Randall" },
-    { photo: dustinImage, name: "Dustin" },
-    { photo: efrainImage, name: "Efrain" },
+    { photo: macImage, name: cardData.mac.name },
+    { photo: randallImage, name: cardData.randall.name },
+    { photo: dustinImage, name: cardData.dustin.name },
+    { photo: efrainImage, name: cardData.efrain.name },
 ];
