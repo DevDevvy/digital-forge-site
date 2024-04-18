@@ -7,15 +7,7 @@
   bottom: 1em; /* Distance from the bottom */
   margin-top: 1em;
   animation: slideUp 0.5s ease-out forwards; /* Correct the animation name if necessary */
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100vh); /* Start below the viewport */
-  }
-  to {
-    transform: translateY(0); /* End at its intended position */
-  }
+  animation-iteration-count: 1; /* Runs the animation only once */
 }
 
 .cardContainer {
@@ -26,11 +18,54 @@
   transition:
     transform 0.5s,
     box-shadow 0.5s;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); */
   background: rgb(230, 224, 224);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-clip: padding-box; /* Prevents the background from bleeding into the border */
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(rgb(230, 224, 224), rgb(230, 224, 224)),
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.4),
+      rgba(0, 0, 0, 0.3)
+    );
+  background-repeat: no-repeat;
+  background-position:
+    center center,
+    border-box;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.2); /* Increasingly larger and softer shadows */
+  transform: rotateX(5deg) rotateY(5deg); /* Tilting the card slightly */
+  will-change: transform;
+}
+.cardContainer::before,
+.cardContainer::after {
+  content: "";
+  position: absolute;
   border-radius: 20px;
 }
 
+.cardContainer::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.cardContainer::after {
+  left: 5px;
+  bottom: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
 .card {
   width: 100%;
   height: 100%;
@@ -186,4 +221,21 @@
   top: 2em;
   margin: 0;
   padding: 0;
+}
+.front {
+  border-radius: 20px;
+}
+.back {
+  border-radius: 18px; /* slightly smaller to give a depth illusion */
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh) translateZ(0);
+  }
+  50% {
+    transform: translateY(50vh) translateZ(150px);
+  }
+  to {
+    transform: translateY(0) translateZ(0);
+  }
 }

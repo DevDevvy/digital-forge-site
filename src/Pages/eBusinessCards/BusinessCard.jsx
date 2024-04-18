@@ -1,6 +1,5 @@
 import styles from "./BusinessCard.module.css"; // Import CSS module
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { cardData } from "./cardData";
 import emailIcon from "../../assets/email.svg";
@@ -13,8 +12,7 @@ import { ProfilePhotoFrame } from "../../Components/ProfilePhotoFrame";
 
 const EBusinessCard = () => {
   let { name } = useParams();
-  // let origName = name;
-  const person = cardData[name.toLowerCase()];
+  const person = useMemo(() => cardData[name.toLowerCase()], [name]);
 
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -46,7 +44,7 @@ const EBusinessCard = () => {
               </div>
               <p className={styles.about}> {person.about}</p>
               <div className={styles.socialDiv}>
-                {person.email ? (
+                {person.email && (
                   <a href={`mailto:${person.email}`}>
                     <img
                       className={styles.socialIcon}
@@ -54,10 +52,8 @@ const EBusinessCard = () => {
                       alt="Email"
                     />
                   </a>
-                ) : (
-                  ""
                 )}
-                {person.twitter ? (
+                {person.twitter && (
                   <a href={createTwitterLink(person.twitter)}>
                     <img
                       src={twitterIcon}
@@ -65,10 +61,8 @@ const EBusinessCard = () => {
                       alt="Twitter"
                     />
                   </a>
-                ) : (
-                  ""
                 )}
-                {person.linkedin ? (
+                {person.linkedin && (
                   <a
                     href={person.linkedin}
                     target="_blank"
@@ -80,8 +74,6 @@ const EBusinessCard = () => {
                       alt="LinkedIn"
                     />
                   </a>
-                ) : (
-                  ""
                 )}
               </div>
               <div className={styles.download}>
