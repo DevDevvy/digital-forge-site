@@ -31,7 +31,7 @@ export const downloadVCard = (person) => {
 
     const base64 = convertImgToBase64URL(photo, function (base64Img) {
         return base64Img;
-    }, 'image/jpeg');
+    }, 'image/png');
 
     const vCardData = [
         "BEGIN:VCARD",
@@ -40,7 +40,7 @@ export const downloadVCard = (person) => {
         `TITLE:'Co-Founder: Digital Forge`,
         `TEL;TYPE=WORK,VOICE:${phone}`,
         `TEL;TYPE=CELL,VOICE:${cell}`,
-        `PHOTO;TYPE=JPEG;ENCODING=BASE64:${base64}`,
+        `PHOTO;TYPE=PNG;ENCODING=BASE64:${base64}`,
         `EMAIL;TYPE=PREF,INTERNET:${email}`,
         "END:VCARD",
     ].join("\r\n");
