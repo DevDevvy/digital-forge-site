@@ -33,7 +33,7 @@ const ScrollingCarousel = () => {
 
   return (
     <>
-      <div className="carousel-header"> OUR SERVICES</div>
+      {/* <div className="carousel-header"> OUR SERVICES</div> */}
       <div className="carousel">
         <div
           className="carousel-slides"
@@ -49,7 +49,9 @@ const ScrollingCarousel = () => {
               alt="satellite pointed at the sky"
             />
             <div className="img-text-container">
-              <h3 className="img-text">Infrastructure and Cloud Services</h3>
+              <h3 className="img-text-header">
+                Infrastructure and Cloud Services
+              </h3>
               <p className="img-text">
                 AWS solutions tailored to meet your unique business needs.
               </p>
@@ -79,7 +81,7 @@ const ScrollingCarousel = () => {
               alt="server cage with wires and lights"
             />
             <div className="img-text-container">
-              <h3 className="img-text">Networking and Communications</h3>
+              <h3 className="img-text-header">Networking and Communications</h3>
               <p className="img-text">
                 Comprehensive networking and communications setup solutions.
               </p>
@@ -105,7 +107,7 @@ const ScrollingCarousel = () => {
               alt="computer chip close up"
             />
             <div className="img-text-container">
-              <h3 className="img-text">Mobile and Web Development</h3>
+              <h3 className="img-text-header">Mobile and Web Development</h3>
               <p className="img-text">
                 Cutting-edge mobile and web applications
               </p>
@@ -131,7 +133,7 @@ const ScrollingCarousel = () => {
               alt="computer chip close up"
             />
             <div className="img-text-container">
-              <h3 className="img-text">Automation and AI</h3>
+              <h3 className="img-text-header">Automation and AI</h3>
               <p className="img-text">
                 Modern automation and AI solutions for your business.
               </p>

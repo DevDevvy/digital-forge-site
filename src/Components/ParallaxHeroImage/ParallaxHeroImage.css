@@ -1,0 +1,117 @@
+.hero-image {
+  background-image: url("../../assets/DF-forge.png"); /* ensure the path is correct */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  /* make image darker*/
+  filter: brightness(0.7);
+  height: 50vw; /* Allows for scrolling effect */
+  position: absolute;
+  width: 100vw;
+  top: 0; /* Adjust this value to ensure the image is initially visible as needed */
+  left: 0;
+  right: 0;
+  box-shadow: 6px 4px 9px 5px rgba(0, 0, 0, 0.2);
+
+  /* transform: translateZ(-1px) scale(1.5); */
+}
+.naviagation-links {
+  z-index: 10;
+}
+.spark-layer {
+  position: absolute;
+  width: 100%;
+  height: 55vw; /* Matching the hero image dimensions */
+  filter: blur(1.5px) brightness(3.8) saturate(0.5);
+  background-image: url("../../assets/sparks.png"); /* Use your sparks image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  z-index: 9;
+  pointer-events: none; /* Allows click events to pass through to layers below */
+}
+
+#tagline {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+  text-align: center;
+  color: #f2f2f2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: absolute;
+  top: 10em; /* Adjust this value to ensure the image is initially visible as needed */
+  left: 0;
+  right: 0;
+}
+.parallax-container {
+  overflow: hidden;
+  z-index: 2; /* Adjust z-index as needed */
+  position: relative; /* Often necessary for proper positioning of children */
+  width: 100%;
+  height: 40vw;
+  margin-top: 4em;
+}
+.navigation-links {
+  position: absolute;
+  bottom: 20px; /* Adjust this value to increase/decrease distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20vw; /* Space between buttons */
+  align-items: center;
+}
+
+.navigation-links button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navigation-links button:hover {
+  background-color: #f0f0f0; /* Light grey background on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+  transition: 0.5s;
+}
+button {
+  background-color: #f0f0f0; /* Background color for neumorphic effect */
+  color: #333; /* Text color */
+  border: none; /* Remove border */
+  position: relative;
+  border-radius: 10px; /* Increase border radius for more depth */
+  padding: 10px 20px; /* Add padding */
+  font-size: 1em; /* Increase font size */
+  cursor: pointer; /* Cursor pointer */
+  z-index: 20; /* Ensure button is above other elements */
+  box-shadow:
+    5px 5px 10px #b8b8b8,
+    -5px -5px 10px #ffffff; /* Box shadow for neumorphic effect */
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease; /* Transition effect */
+}
+
+@media (max-width: 1400px) {
+  #tagline {
+    font-size: 1.5em;
+    top: 3em;
+  }
+}
+
+@media (max-width: 700px) {
+  #tagline {
+    font-size: 0.7em;
+    top: 3em;
+  }
+  button {
+    font-size: 0.7em;
+  }
+  .spark-layer {
+    filter: blur(1px) brightness(2.8);
+  }
+}

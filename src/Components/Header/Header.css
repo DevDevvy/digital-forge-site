@@ -1,7 +1,8 @@
 #title {
   transform-style: preserve-3d;
   transition: transform 0.3s;
-  text-shadow: 1px 1px 1px #c04242;
+  color: #cbd4e4;
+  text-shadow: 1px 2px 1px #d1682b;
 }
 #header {
   display: flex;
@@ -11,15 +12,24 @@
   justify-content: space-between;
   align-items: center;
 }
-
+/* .hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
 #fixed-header {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   width: auto;
-  padding: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
   z-index: 10;
+  /* background color grey and transparent with blur */
+  background-color: rgba(20, 6, 6, 0.226);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(156, 152, 152, 0.1);
 }
 
 /* toggle switch */

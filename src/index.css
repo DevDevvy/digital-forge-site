@@ -1,3 +1,13 @@
+:root {
+  --background-color: linear-gradient(
+    95deg,
+    #090d11 0%,
+    rgb(20, 63, 82) 25%,
+    rgb(40, 59, 67) 75%,
+    #0c1a1f 100%
+  );
+  --white-text: #f3f6f2;
+}
 /* Global styles */
 body {
   font-family: Arial, sans-serif;

@@ -1,12 +1,10 @@
 .carousel {
   position: relative;
-  max-width: 600px; /* Adjust based on your needs */
-  margin: auto;
+  max-width: 800px; /* Adjust based on your needs */
+  /* margin: 2em; */
   overflow: hidden;
   box-shadow: 2px 9px 17px 2px;
   border-radius: 10px;
-  margin-top: 19em;
-  margin-bottom: 10em;
 }
 .carousel-header {
   display: flex;
@@ -95,4 +93,48 @@
 }
 .next {
   right: 0;
+}
+@media (max-width: 750px) {
+  .carousel {
+    height: 25vh;
+    width: 40vh;
+    margin-top: 1em;
+  }
+  .content p {
+    padding: 0;
+    margin-top: 0;
+  }
+  .content-box-1 {
+    flex-direction: column;
+  }
+  .img-text-header {
+    font-size: 12px;
+  }
+  .img-text p {
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+  }
+  .img-text-container {
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  .photo-text-ul {
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+  }
+  h3 .img-text-header {
+    font-size: 12px;
+  }
+  .mission-container {
+    flex-direction: column;
+    padding: 3px;
+    margin: 3px;
+  }
 }
