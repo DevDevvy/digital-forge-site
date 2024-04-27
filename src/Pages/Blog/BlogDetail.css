@@ -66,6 +66,12 @@ section {
   .main-content {
     flex-direction: column;
   }
+  section {
+    margin: 1em 1em;
+  }
+  .blog-detail {
+    padding: 0.5em;
+  }
   .main-blog-image {
     width: 100%; /* Adjusts the image width to 100% for small screens */
   }
