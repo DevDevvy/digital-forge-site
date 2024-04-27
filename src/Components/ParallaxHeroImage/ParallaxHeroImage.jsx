@@ -38,8 +38,12 @@ const ParallaxHeroImage = ({ scrollToAbout, scrollToContact }) => {
         Bespoke Software Solutions <br></br>that Scale with You
       </h1>
       <div className="navigation-links">
-        <button onClick={scrollToAbout}>About</button>
-        <button onClick={scrollToContact}>Contact</button>
+        <button className="nav-button" onClick={scrollToAbout}>
+          About
+        </button>
+        <button className="nav-button" onClick={scrollToContact}>
+          Contact
+        </button>
       </div>
     </div>
   );

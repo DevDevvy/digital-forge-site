@@ -5,6 +5,8 @@ import { TermsAndConditionsPage } from "./Pages/Footer/TermsAndConditionsPage";
 import { AccessibilityPage } from "./Pages/Footer/AccessibilityPage";
 import BusinessCard from "./Pages/eBusinessCards/BusinessCard";
 import AboutUsPage from "./Pages/AboutUs/AboutUs";
+import BlogList from "./Pages/Blog/BlogList";
+import BlogDetail from "./Pages/Blog/BlogDetail";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route exact path="/privacy" element={<PrivacyPolicyPage />} />
         <Route exact path="/terms" element={<TermsAndConditionsPage />} />
         <Route exact path="/accessibility" element={<AccessibilityPage />} />
+        <Route exact path="/blog/list" element={<BlogList />} />
+        <Route exact path="/blog/:id" element={<BlogDetail />} />
       </Routes>
     </>
   );
