@@ -6,7 +6,8 @@ import Footer from "../Components/Footer/Footer.jsx";
 import ModalOverlay from "../Components/ModalOverlay.jsx";
 import ContactForm from "../Components/ContactForm.jsx";
 import AboutUsPage from "./AboutUs/AboutUs";
-
+import SingleBlogPreview from "../Components/SingleBlogPreview/SingleBlogPreview.jsx";
+import blogs from "../Pages/Blog/blogs";
 const HomePage = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -44,6 +45,7 @@ const HomePage = () => {
         />
         {/* <ProfilePhotoFrameGroup onClick={handleEmailButtonClick} /> */}
         <ContactForm showCloseButton={false} ref={contactFormRef} />
+        <SingleBlogPreview blogs={blogs} />
         <Footer />
       </div>
       {showContactForm && (

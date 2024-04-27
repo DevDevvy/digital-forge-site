@@ -15,15 +15,22 @@ const SingleBlogPreview = ({ blogs }) => {
   }
 
   return (
-    <div className="blog-preview">
+    <div className="single-blog-preview">
       <img
+        id="blog-preview-photo"
         src={selectedBlog.image}
         alt={selectedBlog.title}
-        style={{ width: "100%", height: "auto", borderRadius: "10px" }}
       />
-      <div className="blog-info">
+      <div className="single-blog-info">
         <h2>{selectedBlog.title}</h2>
         <p>{selectedBlog.snippet}</p>
+        <button
+          id="visit-blog"
+          onClick={() => (window.location = `/blog/${selectedBlog.id}`)}
+        >
+          {" "}
+          Visit Blog{" "}
+        </button>
       </div>
     </div>
   );
