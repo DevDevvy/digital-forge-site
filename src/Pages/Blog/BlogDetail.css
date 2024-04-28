@@ -1,10 +1,9 @@
 .blog-detail {
-  max-width: 1200px;
   margin: auto;
   padding: 4em;
   background-image: var(--background-color);
-  box-shadow: 0 4px 8px rgba(128, 103, 88, 0.1);
-  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(128, 103, 88, 0.1); */
+  /* border-radius: 10px; */
   font-family: "Poppins", sans-serif;
   color: var(--white-text);
 }
