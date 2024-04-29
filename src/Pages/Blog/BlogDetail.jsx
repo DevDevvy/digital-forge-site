@@ -35,12 +35,12 @@ const BlogDetail = () => {
           <div className="blog-navigation">
             {prevBlog && (
               <Link to={`/blog/${prevBlog.id}`} className="nav-arrow blog-prev">
-                &#8592; Previous: {prevBlog.title}
+                &#8592; Prev Post
               </Link>
             )}
             {nextBlog && (
               <Link to={`/blog/${nextBlog.id}`} className="nav-arrow blog-next">
-                Next: {nextBlog.title} &#8594;
+                Next Post &#8594;
               </Link>
             )}
           </div>
