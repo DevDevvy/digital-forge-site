@@ -21,22 +21,19 @@ const AboutUsPage = ({
             </div>
 
             <div className="paragraph">
-              <h2>
-                Digital Forge - Transforming Ideas Into Software and
-                Infrastructure
-              </h2>
+              <h2>Transforming Your Ideas Into Software and Infrastructure</h2>
               <p>
-                Digital Forge is a collective of professionals who saw too much
-                value in ourselves to stay victim to the whims of a volatile
-                industry. Now, we offer our skills to the world at large instead
-                of limiting our scope. Leveraging modern tools including
-                Artificial Intelligence for software development, cloud native,
-                web and mobile app development, we are language and framework
-                agnostic and will use the best tools for the job. Our experts
-                can do everything from enterprise-level cloud infrastructure,
-                database management, migration, and infrastructure as code, to
-                web and mobile app development and even hardware and networking
-                solutions.
+                As technology has evolved, our dedicated group of innovators
+                have worked tirelessly to obtain the skills necessary to work
+                fluently across multiple languages and frameworks. Now, we offer
+                our skills to the world at large. Operating advanced tools
+                including Artificial Intelligence for software development,
+                cloud native, as well as web and mobile app development, our
+                experts can handle anything from enterprise-level cloud
+                solutions, all the way to web and mobile app development, and
+                are available to assist at any time. Whether you are
+                establishing the next big thing or building on existing success,
+                let us help ease your transition to the next level.
               </p>
             </div>
           </div>

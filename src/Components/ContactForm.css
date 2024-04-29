@@ -79,7 +79,7 @@ form {
 
 .contact-form button {
   padding: 10px;
-  background-color: #007bff;
+  background-color: #0d6d52;
   color: white;
   border: none;
   border-radius: 4px;
@@ -88,5 +88,5 @@ form {
 }
 
 .contact-form button:hover {
-  background-color: #0056b3;
+  background-color: rgba(14, 83, 24, 0.757);
 }

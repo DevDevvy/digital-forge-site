@@ -137,7 +137,7 @@ const blogs = [
     content: `
     <header>
     <h1>Harnessing Generative AI for Business Reinvention</h1>
-    <p>As businesses confront an increasingly volatile environment, generative AI stands out as a transformative force in reshaping corporate strategy. With the Accenture Pulse of Change Index noting a 183% increase in business change rates since 2019, a staggering 83% of organizations are now accelerating their transformation agendas to leverage these advancements effectively.</p>
+    <p>As businesses confront an increasingly volatile environment, generative AI stands out as a transformative force in reshaping corporate strategy. With over 180% increase in business change rates since 2019, over 80% of organizations are now accelerating their transformation agendas to leverage these advancements effectively.</p>
 </header>
 
 <section>
