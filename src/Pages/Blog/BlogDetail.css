@@ -57,7 +57,6 @@ footer {
   border-radius: 5px;
   margin: 1em 0;
   cursor: pointer;
-  transition: background-color 0.3s;
   box-shadow: none;
 }
 section {
@@ -80,7 +79,6 @@ section {
 
 .nav-arrow {
   padding: 10px 20px;
-  flex: 1;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -89,7 +87,7 @@ section {
   color: var(--white-text);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.5em;
   border-radius: 5px;
   transition:
     background-color 0.3s,
