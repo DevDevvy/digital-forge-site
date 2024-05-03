@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import blogs from "./blogs";
 import "./BlogDetail.css";
 import Footer from "../../Components/Footer/Footer";
@@ -11,7 +12,10 @@ const BlogDetail = () => {
 
   const prevBlog = index > 0 ? blogs[index - 1] : null;
   const nextBlog = index < blogs.length - 1 ? blogs[index + 1] : null;
-
+  // Scroll to top whenever the 'id' changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
   return (
     <>
       <Header />
@@ -33,13 +37,19 @@ const BlogDetail = () => {
           />
           {/* Navigation Arrows */}
           <div className="blog-navigation">
-            {prevBlog && (
+            {prevBlog ? (
               <Link to={`/blog/${prevBlog.id}`} className="nav-arrow blog-prev">
                 &#8592; Prev Post
               </Link>
-            )}
+            ) : (
+              <span />
+            )}{" "}
+            {/* This empty span will keep the space when there is no prevBlog */}
             {nextBlog && (
-              <Link to={`/blog/${nextBlog.id}`} className="nav-arrow blog-next">
+              <Link
+                to={`/blog/${nextBlog.id}`}
+                className={`nav-arrow blog-next ${!prevBlog ? "only-next" : ""}`}
+              >
                 Next Post &#8594;
               </Link>
             )}

@@ -81,6 +81,7 @@ section {
   padding: 10px 20px;
   text-align: center;
   align-items: center;
+  text-align: center;
   justify-content: center;
   margin: 5px;
   background-image: linear-gradient(#e376162c, #1775713e, #e0901700);
@@ -93,7 +94,10 @@ section {
     background-color 0.3s,
     color 0.3s;
 }
-
+/* Additional style to force the Next button to the right if there is no Prev button */
+.nav-arrow.only-next {
+  margin-left: auto; /* This will push the button to the right */
+}
 .nav-arrow:hover {
   background-color: #2a2b2c;
   color: #ffffff;
