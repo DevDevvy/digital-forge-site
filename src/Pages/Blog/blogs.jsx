@@ -69,7 +69,6 @@ const blogs = [
 
 <footer>
   <p>For businesses aiming to maximize their software investments while maintaining high standards of security and compliance, partnering with an onshore development team is the way forward. Embrace the strategic advantage and local expertise of a committed onshore developer today.</p>
-  <button id="blog-button" onclick="window.location.href='mailto:contact@digitalforge-tek.com';">Message Us Today</button>
 
   </footer>
 
@@ -122,8 +121,7 @@ const blogs = [
 
 <footer>
     <p>Implementing strong security measures in software development is not just a technical necessity but a critical business strategy to protect assets and maintain trust with users and stakeholders.</p>
-    <button id="blog-button" onclick="window.location.href='mailto:contact@digitalforge-tek.com';">Message Us Today</button>
-
+  
     </footer>
     `,
   },
@@ -184,8 +182,7 @@ const blogs = [
 
 <footer>
     <h3>Ready to Transform Your Business with AI?</h3>
-    <button id="blog-button" onclick="window.location.href='mailto:contact@digitalforge-tek.com';">Message Us Today</button>
-
+  
     <p>Explore how our innovative AI solutions can generate substantial value for your organization.</p>
 </footer>
     `,
@@ -240,8 +237,7 @@ const blogs = [
 
 <footer>
     <p>Cloud scalability transcends mere technical capabilities; it embodies a strategic asset that propels dynamic business growth and enhances operational efficiency. If you're ready to elevate your business with scalable cloud solutions, <strong>contact us</strong> today to discover how our services can support your growth aspirations.</p>
-    <button id="blog-button" onclick="window.location.href='mailto:contact@digitalforge-tek.com';">Message Us Today</button>
-</footer>
+  </footer>
     `,
   },
 ];
