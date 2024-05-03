@@ -1,0 +1,150 @@
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.blog-detail {
+  margin: auto;
+  padding: 0 4em;
+  padding-top: 4em;
+  padding-bottom: 1em;
+  background-image: var(--background-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--white-text);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-blog-image {
+  flex: 0.5;
+  width: 5em;
+  border-radius: 10px;
+  box-shadow: 2px 3px 8px rgba(224, 101, 43, 0.878);
+}
+
+.first-paragraph {
+  flex: 1; /* Takes up the remaining space */
+  padding: 2em;
+  background-color: #e2e9ed;
+  color: black;
+  border-radius: 10px;
+}
+
+/* .blog-detail div:not(.main-content) {
+  margin-top: 20px;
+} */
+
+footer {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+}
+
+#blog-button {
+  background-color: #182635;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  flex-grow: 30%;
+  border-radius: 5px;
+  margin: 1em 0;
+  cursor: pointer;
+  box-shadow: none;
+}
+section {
+  margin: 4em 2em;
+}
+#blog-button:hover {
+  background-color: #0a1c2f55;
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+.blog-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 10px;
+  width: 100%;
+  height: auto;
+}
+
+.nav-arrow {
+  padding: 10px 20px;
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 5px;
+  background-image: linear-gradient(#e376162c, #1775713e, #e0901700);
+  color: var(--white-text);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+/* Additional style to force the Next button to the right if there is no Prev button */
+.nav-arrow.only-next {
+  margin-left: auto; /* This will push the button to the right */
+}
+.nav-arrow:hover {
+  background-color: #2a2b2c;
+  color: #ffffff;
+}
+
+.blog-prev {
+  text-align: left;
+}
+
+.blog-next {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .nav-arrow {
+    padding: 8px 10px; /* Smaller padding on smaller screens */
+    font-size: 14px; /* Smaller font size if needed */
+  }
+  .main-content p {
+    font-size: 1em;
+  }
+  section p {
+    font-size: 1em;
+  }
+  section {
+    margin: 1em 1em;
+  }
+  .blog-detail {
+    padding: 2em;
+  }
+  .main-blog-image {
+    width: 100%; /* Adjusts the image width to 100% for small screens */
+  }
+}
+.modal-content {
+  background-image: var(--background-color);
+}
+.close-button {
+  /* send to the right of the div */
+  margin-left: auto;
+  cursor: pointer;
+}
+#blog-button {
+  display: block; /* Makes the button a block element */
+  width: 200px; /* Sets a specific width for the button */
+  margin: 20px auto; /* Centers the button horizontally and adds vertical space */
+}

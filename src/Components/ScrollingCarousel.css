@@ -3,8 +3,8 @@
   max-width: 800px; /* Adjust based on your needs */
   /* margin: 2em; */
   overflow: hidden;
-  box-shadow: 2px 9px 17px 2px;
-  border-radius: 10px;
+  /* box-shadow: 2px 9px 17px 2px; */
+  border-radius: 5px;
 }
 .carousel-header {
   display: flex;

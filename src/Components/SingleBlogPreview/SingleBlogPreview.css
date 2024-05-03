@@ -1,0 +1,78 @@
+.single-blog-preview {
+  max-width: 90vh; /* Limit the size of the preview */
+  border: 1px solid #ddd; /* Light border around the preview */
+  border-radius: 10px; /* Rounded corners for the preview */
+  overflow: hidden; /* Ensures nothing spills outside the border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px; /* Space around the preview */
+  display: flex; /* Align the image and text side by side */
+  color: var(--white-text);
+  background-color: rgba(
+    28,
+    24,
+    24,
+    0.521
+  ); /* Light background for the text area */
+}
+#visit-blog {
+  background-color: #d8dde2;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: none;
+  margin-top: 2em;
+}
+
+#visit-blog:hover {
+  background-color: #d8dde2;
+  box-shadow: 2px 3px 9px rgb(233, 110, 29);
+  transform: scale(1.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.single-blog-info {
+  padding: 2em;
+  height: 100%; /* Fill the height of the preview */
+  display: flex; /* Align the text vertically */
+  flex-direction: column; /* Stack the text on top of each other */
+  justify-content: space-between; /* Space between title and snippet */
+  align-items: center; /* Center the text horizontally */
+  align-content: center;
+}
+
+.single-blog-info h2 {
+  font-size: 18px; /* Appropriate size for the preview title */
+  margin: 0;
+  margin-bottom: 2em; /* Space between title and snippet */
+}
+
+.single-blog-info p {
+  font-size: 14px; /* Smaller text for the snippet */
+  color: var(--white-text); /* Lighter text color for readability */
+  margin: 0;
+  height: 100%;
+}
+#blog-preview-photo {
+  width: 40%; /* Adjust size based on your preference */
+  height: auto;
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .single-blog-preview {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .blog-info {
+    text-align: center;
+  }
+  .main-blog-image {
+    width: 100%; /* Adjusts the image width to 100% for small screens */
+  }
+}
