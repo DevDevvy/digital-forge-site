@@ -4,6 +4,7 @@ import ModalOverlay from "../../Components/ModalOverlay";
 import logo from "../../assets/DF-Logo.png";
 import ProfilePhotoFrameGroup from "../../Components/ProfilePhotoFrameGroup";
 import ScrollingCarousel from "../../Components/ScrollingCarousel";
+import { useEffect, useRef, useState } from "react";
 
 const AboutUsPage = ({
   handleEmailButtonClick,
@@ -11,11 +12,36 @@ const AboutUsPage = ({
   showContactForm,
   isDarkMode,
 }) => {
+  const [fadeIn, setFadeIn] = useState(false);
+  const refSlide = useRef(null);
+  const [slideIn, setSlideIn] = useState(false);
+
+  useEffect(() => {
+    setFadeIn(true);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setSlideIn(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (refSlide.current) {
+      observer.observe(refSlide.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <div className="about-us">
         <div className={isDarkMode ? "content dark-mode-p" : "content"}>
-          <div className="content-box-1">
+          <div className={`content-box-1 ${fadeIn ? "fade-in" : ""}`}>
             <div>
               <img src={logo} id="df-logo-p" alt="Digital Forge Logo" />
             </div>
@@ -56,7 +82,10 @@ const AboutUsPage = ({
               <ScrollingCarousel />
             </div>
           </div>
-          <div className="content-box-3">
+          <div
+            ref={refSlide}
+            className={`content-box-3 ${slideIn ? "slide-in-left" : ""}`}
+          >
             <h2>Security and Development</h2>
             <p>
               We are an onshore, veteran owned operation ensuring data

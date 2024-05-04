@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import "./HomePage.css";
 import ParallaxHeroImage from "../Components/ParallaxHeroImage/ParallaxHeroImage.jsx";
 import Header from "../Components/Header/Header.jsx";
@@ -13,7 +13,27 @@ const HomePage = () => {
   const [darkMode, setDarkMode] = useState(false);
   const aboutUsRef = useRef(null);
   const contactFormRef = useRef(null);
+  const refSlide = useRef(null);
+  const [slideIn, setSlideIn] = useState(false);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setSlideIn(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (refSlide.current) {
+      observer.observe(refSlide.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const scrollToRef = (ref) =>
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
@@ -45,7 +65,12 @@ const HomePage = () => {
         />
         {/* <ProfilePhotoFrameGroup onClick={handleEmailButtonClick} /> */}
         <ContactForm showCloseButton={false} ref={contactFormRef} />
-        <SingleBlogPreview blogs={blogs} />
+        <div
+          className={`single-blog ${slideIn ? "slide-in-right" : ""}`}
+          ref={refSlide}
+        >
+          <SingleBlogPreview blogs={blogs} />
+        </div>
         <Footer />
       </div>
       {showContactForm && (

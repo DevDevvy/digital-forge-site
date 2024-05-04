@@ -179,11 +179,30 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
+.slide-in-left {
+  opacity: 0; /* Start invisible */
+  animation: slideInLeft 0.5s forwards;
+}
+
+/* Ensure the element stays hidden until the animation triggers */
+.content-box-3:not(.slide-in-left) {
+  visibility: hidden;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
     opacity: 1;
   }
 }
