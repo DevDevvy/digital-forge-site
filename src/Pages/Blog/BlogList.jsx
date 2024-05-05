@@ -12,7 +12,11 @@ const BlogList = () => {
             key={blog.id}
             className={`blog-preview ${index % 2 === 0 ? "normal" : "reverse"}`}
           >
-            <img src={blog.image} alt="Preview" className="blog-image" />
+            <img
+              src={blog.image}
+              alt="Preview of blog"
+              className="blog-image"
+            />
             <div className="blog-info">
               <h1>{blog.title}</h1>
               <p>{blog.snippet}</p>

@@ -32,7 +32,11 @@ const BlogDetail = () => {
       <div className="blog-container">
         <div className="blog-detail">
           <div className="main-content">
-            <img src={blog.mainImage} alt="Main" className="main-blog-image" />
+            <img
+              src={blog.mainImage}
+              alt="Main Blog Graphic"
+              className="main-blog-image"
+            />
             <div
               dangerouslySetInnerHTML={{
                 __html: blog.content.split("</p>")[0] + "</p>",

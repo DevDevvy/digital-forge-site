@@ -33,7 +33,7 @@ const ParallaxHeroImage = ({ scrollToAbout, scrollToContact }) => {
   return (
     <div className="parallax-container">
       <div className="spark-layer"></div>
-      <img className="hero-image" src={forge} />
+      <img className="hero-image" src={forge} alt="knight forging a sword" />
       <h1 id="tagline">
         Adapted Software Solutions <br></br>that Scale with You
       </h1>

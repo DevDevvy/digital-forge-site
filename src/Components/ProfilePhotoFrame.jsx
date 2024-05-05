@@ -21,7 +21,7 @@ export const ProfilePhotoFrame = ({ photo, name, linkedin }) => {
     <div className="photo-frame" onMouseOver={tiltDiv}>
       <a href={linkedin}>
         <div className="photo-ring">
-          <img src={photo} alt={name} className="profile-photo" />
+          <img src={photo} alt={`${name}-headshot`} className="profile-photo" />
           <p className="profile-name">{name.toUpperCase()}</p>
         </div>
       </a>
