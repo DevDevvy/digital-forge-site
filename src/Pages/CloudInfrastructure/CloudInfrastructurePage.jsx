@@ -42,11 +42,14 @@ const CloudInfrastructurePage = () => {
           <article>
             <h2>Cost-Effective Scaling</h2>
             <p>
-              Our scalable solutions are designed to minimize costs while
-              maximizing functionality. By adopting a 'scale as you grow'
-              philosophy, we help you manage investment in infrastructure in
-              line with your business growth, ensuring cost-efficiency and
-              adaptability.
+              Our{" "}
+              <Link className="div-link" to="/blog/cloud-scalability">
+                scalable solutions
+              </Link>{" "}
+              are designed to minimize costs while maximizing functionality. By
+              adopting a 'scale as you grow' philosophy, we help you manage
+              investment in infrastructure in line with your business growth,
+              ensuring cost-efficiency and adaptability.
             </p>
           </article>
           <article>

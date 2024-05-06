@@ -32,8 +32,11 @@ const AIAndAutomationPage = () => {
           <article>
             <h2>Custom AI Solutions</h2>
             <p>
-              We specialize in fine-tuning AI to fit your business needs,
-              developing custom assistants that enhance productivity and
+              We specialize in fine-tuning{" "}
+              <Link className="div-link" to="/blog/generative-ai">
+                AI to fit your business needs
+              </Link>
+              , developing custom assistants that enhance productivity and
               decision-making processes. Our AI solutions use natural language
               processing and machine learning to provide intuitive and smart
               interactions.

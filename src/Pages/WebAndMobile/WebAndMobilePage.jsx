@@ -48,20 +48,27 @@ const WebAndMobilePage = () => {
             <p id="ai-ml">
               <h2>AI and Machine Learning</h2>
               <p>
-                We integrate AI technologies to create smart, responsive
-                applications that improve over time, utilizing machine learning
-                to offer personalized experiences to users. Our AI-powered
-                solutions are designed to streamline operations and provide key
-                insights, driving efficiency and innovation.
+                We integrate{" "}
+                <Link className="div-link" to="/ai-and-automation">
+                  AI technologies
+                </Link>{" "}
+                to create smart, responsive applications that improve over time,
+                utilizing machine learning to offer personalized experiences to
+                users. Our AI-powered solutions are designed to streamline
+                operations and provide key insights, driving efficiency and
+                innovation.
               </p>
             </p>
           </article>
           <article id="security">
             <h2>Security and Encryption</h2>
             <p>
-              In a world where data breaches are common, we prioritize robust
-              security measures including the latest encryption standards to
-              protect your applications and user data from cyber threats.
+              In a world where data breaches are common, we prioritize{" "}
+              <Link className="div-link" to="/blog/security-best-practices">
+                robust security measures
+              </Link>{" "}
+              including the latest encryption standards to protect your
+              applications and user data from cyber threats.
             </p>
           </article>
         </section>
