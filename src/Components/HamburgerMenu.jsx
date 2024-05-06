@@ -6,6 +6,10 @@ export const HamburgerMenu = ({ darkMode }) => {
     document.body.classList.toggle("menu-open");
   }
 
+  const handleLinkClick = () => {
+    toggleHamburgerMenu();
+  };
+
   return (
     <>
       <div
@@ -19,8 +23,17 @@ export const HamburgerMenu = ({ darkMode }) => {
       </div>
       <h1 id="digitalforge">Digital Forge</h1>
       <div id="nav-menu-container">
-        <Link to="/" className="nav">
+        <Link to="/" className="nav" onClick={handleLinkClick}>
           Home
+        </Link>
+        <Link to="/ai-and-automation" className="nav" onClick={handleLinkClick}>
+          AI & Automation
+        </Link>
+        <Link to="/cloud" className="nav" onClick={handleLinkClick}>
+          Cloud & Infrastructure
+        </Link>
+        <Link to="/web-and-mobile" className="nav" onClick={handleLinkClick}>
+          Web & Mobile Development
         </Link>
         {/* <Link to="/about" className="nav">
           About

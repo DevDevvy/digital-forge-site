@@ -2,7 +2,11 @@ import "./ParallaxHeroImage.css";
 
 import forge from "../../assets/DF-forge.png";
 
-const ParallaxHeroImage = ({ scrollToAbout, scrollToContact }) => {
+const ParallaxHeroImage = ({
+  scrollToAbout,
+  scrollToContact,
+  homepage = false,
+}) => {
   let lastKnownScrollPosition = 0;
   let ticking = false;
 
@@ -37,14 +41,16 @@ const ParallaxHeroImage = ({ scrollToAbout, scrollToContact }) => {
       <h1 id="tagline">
         Adapted Software Solutions <br></br>that Scale with You
       </h1>
-      <div className="navigation-links">
-        <button className="nav-button" onClick={scrollToAbout}>
-          About
-        </button>
-        <button className="nav-button" onClick={scrollToContact}>
-          Contact
-        </button>
-      </div>
+      {homepage && (
+        <div className="navigation-links">
+          <button className="nav-button" onClick={scrollToAbout}>
+            About
+          </button>
+          <button className="nav-button" onClick={scrollToContact}>
+            Contact
+          </button>
+        </div>
+      )}
     </div>
   );
 };

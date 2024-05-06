@@ -1,0 +1,77 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3em;
+  background-image: var(--background-color);
+  color: var(--white-text);
+  animation: fadeIn 1s;
+}
+
+.page-section {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  text-align: center;
+  padding: 2em;
+}
+
+.page-header {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  margin: 0 4em;
+  text-align: center;
+}
+.page-header h1 {
+  text-shadow: 2px 2px 4px #000000;
+  border-bottom: 1px solid #eee;
+  padding: 1em;
+}
+/* make every other article div a shade darker */
+article:nth-child(odd) {
+  background-color: #07153145;
+  box-shadow: 3px 3px 10px #06040468;
+}
+article {
+  padding: 2em;
+}
+footer {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+}
+
+section {
+  margin: 4em 2em;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .page-section {
+    flex-direction: column;
+  }
+
+  .page-header p {
+    font-size: 0.9em;
+  }
+
+  section {
+    margin: 1em 1em;
+  }
+  .page-header {
+    font-size: 1em;
+    margin: 1em;
+  }
+  .main-blog-image {
+    width: 100%; /* Adjusts the image width to 100% for small screens */
+  }
+}

@@ -55,6 +55,7 @@ const HomePage = () => {
       <ParallaxHeroImage
         scrollToAbout={() => scrollToRef(aboutUsRef)}
         scrollToContact={() => scrollToRef(contactFormRef)}
+        homepage={true}
       />
       <div id="content-container" ref={aboutUsRef}>
         <AboutUsPage

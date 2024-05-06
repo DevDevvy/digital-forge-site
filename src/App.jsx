@@ -7,6 +7,9 @@ import BusinessCard from "./Pages/eBusinessCards/BusinessCard";
 import AboutUsPage from "./Pages/AboutUs/AboutUs";
 import BlogList from "./Pages/Blog/BlogList";
 import BlogDetail from "./Pages/Blog/BlogDetail";
+import WebAndMobilePage from "./Pages/WebAndMobile/WebAndMobilePage";
+import CloudInfrastructurePage from "./Pages/CloudInfrastructure/CloudInfrastructurePage";
+import AIAndAutomationPage from "./Pages/AIAndAutomation/AIAndAutomationPage";
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
         <Route exact path="/accessibility" element={<AccessibilityPage />} />
         <Route exact path="/blog/list" element={<BlogList />} />
         <Route exact path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/web-and-mobile" element={<WebAndMobilePage />} />
+        <Route path="/cloud" element={<CloudInfrastructurePage />} />
+        <Route path="/ai-and-automation" element={<AIAndAutomationPage />} />
       </Routes>
     </>
   );
