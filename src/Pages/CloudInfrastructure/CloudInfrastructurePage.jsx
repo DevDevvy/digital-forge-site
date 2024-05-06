@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import ParallaxHeroImage from "../../Components/ParallaxHeroImage/ParallaxHeroImage";
@@ -10,6 +11,14 @@ const CloudInfrastructurePage = () => {
       <Header />
       <ParallaxHeroImage />
       <body className="page-container">
+        <div className="services-buttons">
+          <Link className="service-button" to="/web-and-mobile">
+            Web & Mobile
+          </Link>
+          <Link className="service-button" to="/ai-and-automation">
+            AI & Automation
+          </Link>
+        </div>
         <header className="page-header">
           <h1>Scalable and Efficient Cloud Solutions by Digital Forge</h1>
           <p>

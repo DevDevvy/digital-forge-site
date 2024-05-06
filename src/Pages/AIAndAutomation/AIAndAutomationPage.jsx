@@ -4,6 +4,7 @@ import "../WebAndMobile/WebAndMobilePage.css";
 import blogs from "../Blog/blogs";
 import Header from "../../Components/Header/Header";
 import ParallaxHeroImage from "../../Components/ParallaxHeroImage/ParallaxHeroImage";
+import { Link } from "react-router-dom";
 
 const AIAndAutomationPage = () => {
   return (
@@ -11,6 +12,14 @@ const AIAndAutomationPage = () => {
       <Header />
       <ParallaxHeroImage />
       <body className="page-container">
+        <div className="services-buttons">
+          <Link className="service-button" to="/cloud">
+            Cloud & Infrastructure
+          </Link>
+          <Link className="service-button" to="/web-and-mobile">
+            Web & Mobile
+          </Link>
+        </div>
         <header className="page-header">
           <h1>AI & Automation Solutions</h1>
           <p>

@@ -43,7 +43,15 @@ footer {
   font-size: 14px;
   text-align: center;
 }
-
+.services-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  color: var(--white-text);
+}
+.service-button {
+  color: var(--white-text);
+}
 section {
   margin: 4em 2em;
 }
@@ -58,14 +66,16 @@ section {
 @media (max-width: 768px) {
   .page-section {
     flex-direction: column;
+    margin: 0.3em;
+    padding: 1em;
   }
 
   .page-header p {
     font-size: 0.9em;
   }
 
-  section {
-    margin: 1em 1em;
+  article {
+    padding: 1em;
   }
   .page-header {
     font-size: 1em;

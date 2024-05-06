@@ -1,6 +1,7 @@
 import "./ParallaxHeroImage.css";
 
 import forge from "../../assets/DF-forge.png";
+import { Link } from "react-router-dom";
 
 const ParallaxHeroImage = ({
   scrollToAbout,
@@ -41,7 +42,7 @@ const ParallaxHeroImage = ({
       <h1 id="tagline">
         Adapted Software Solutions <br></br>that Scale with You
       </h1>
-      {homepage && (
+      {homepage ? (
         <div className="navigation-links">
           <button className="nav-button" onClick={scrollToAbout}>
             About
@@ -49,6 +50,12 @@ const ParallaxHeroImage = ({
           <button className="nav-button" onClick={scrollToContact}>
             Contact
           </button>
+        </div>
+      ) : (
+        <div className="navigation-links">
+          <Link to="/" className="nav-button">
+            Home
+          </Link>
         </div>
       )}
     </div>
