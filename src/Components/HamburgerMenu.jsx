@@ -21,8 +21,8 @@ export const HamburgerMenu = ({ darkMode }) => {
         <div></div>
         <div></div>
       </div>
-      <h1 id="digitalforge">Digital Forge</h1>
       <div id="nav-menu-container">
+        <h1 id="digitalforge">DIGITAL FORGE</h1>
         <Link to="/" className="nav" onClick={handleLinkClick}>
           Home
         </Link>
@@ -35,15 +35,16 @@ export const HamburgerMenu = ({ darkMode }) => {
         <Link to="/web-and-mobile" className="nav" onClick={handleLinkClick}>
           Web & Mobile Development
         </Link>
-        {/* <Link to="/about" className="nav">
-          About
-        </Link> */}
-        <Link
+        <Link to="/blog/list" className="nav" onClick={handleLinkClick}>
+          Digital Forge Blog
+        </Link>
+
+        {/* <Link
           className="nav"
           to="https://connect.intuit.com/pay/DigitalForge/scs-v1-e82ba5da82074903b2a743c776bbb8c2cc6f34a98fd541fd920c5bbbac5328edcde7207b3ca04e0b9ea2687db200b4fe?locale=EN_US"
         >
           Buy Us A Coffee
-        </Link>
+        </Link> */}
       </div>
     </>
   );
