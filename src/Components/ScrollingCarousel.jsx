@@ -3,6 +3,7 @@ import "./ScrollingCarousel.css";
 import motherboard from "../assets/motherboard.jpg";
 import servers from "../assets/servers.jpg";
 import satellite from "../assets/satellite.jpg";
+import { Link } from "react-router-dom";
 
 const ScrollingCarousel = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -50,7 +51,9 @@ const ScrollingCarousel = () => {
             />
             <div className="img-text-container">
               <h3 className="img-text-header">
-                Infrastructure and Cloud Services
+                <Link className="carousel-link" to="/cloud">
+                  Infrastructure and Cloud Services
+                </Link>
               </h3>
               <p className="img-text">
                 AWS solutions tailored to meet your unique business needs.
@@ -107,7 +110,9 @@ const ScrollingCarousel = () => {
               alt="computer chip close up"
             />
             <div className="img-text-container">
-              <h3 className="img-text-header">Mobile and Web Development</h3>
+              <Link className="carousel-link" to="/web-and-mobile">
+                <h3 className="img-text-header">Mobile and Web Development</h3>
+              </Link>
               <p className="img-text">
                 Cutting-edge mobile and web applications
               </p>
@@ -133,7 +138,9 @@ const ScrollingCarousel = () => {
               alt="computer chip close up"
             />
             <div className="img-text-container">
-              <h3 className="img-text-header">Automation and AI</h3>
+              <Link className="carousel-link" to="/ai-and-automation">
+                <h3 className="img-text-header">Automation and AI</h3>
+              </Link>
               <p className="img-text">
                 Modern automation and AI solutions for your business.
               </p>
