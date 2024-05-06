@@ -8,7 +8,9 @@
   color: var(--white-text);
   animation: fadeIn 1s;
 }
-
+header p {
+  padding: 2em;
+}
 .page-section {
   display: flex;
   align-items: center;
