@@ -34,12 +34,12 @@ const WebAndMobilePage = () => {
             <p id="web-technologies">
               <h2>Advanced Web Technologies</h2>
               <p>
-                Our team utilizes{" "}
-                <strong>Accelerated Mobile Pages (AMP)</strong> and{" "}
+                Our team utilizes modern technologies like{" "}
+                <strong>React/React Native </strong> and{" "}
                 <strong>Progressive Web Apps (PWAs)</strong> to enhance the
                 speed and performance of web applications, ensuring they are
                 optimized for mobile devices and designed for peak performance.
-                These technologies enable faster loading times and offline
+                These technologies enable cross-platform and offline
                 capabilities, improving user engagement and retention.
               </p>
             </p>
