@@ -1,8 +1,21 @@
+import { useState } from "react";
+import ContactForm from "../../Components/ContactForm";
+import ModalOverlay from "../../Components/ModalOverlay";
 import "./PrivacyPolicy.css";
+import Header from "../../Components/Header/Header";
+import ParallaxHeroImage from "../../Components/ParallaxHeroImage/ParallaxHeroImage";
+import Footer from "../../Components/Footer/Footer";
 
 export const TermsAndConditionsPage = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+
+  const handleCloseContactForm = () => {
+    setShowContactForm(false);
+  };
   return (
     <>
+      <Header />
+      <ParallaxHeroImage />
       <div id="policyContainer">
         <h1 id="h.tyye0vpr0u0u">
           <span>Terms and Conditions</span>
@@ -34,9 +47,17 @@ export const TermsAndConditionsPage = () => {
         <p className="policyParagraph">
           <span>You can contact us by phone at 8639490039, email at </span>
           <span>
-            <a href="mailto:contact-us@digitalforge-tek.com">
-              Contact-Us@digitalforge-tek.com
-            </a>
+            {showContactForm && (
+              <ModalOverlay
+                onClose={handleCloseContactForm}
+                showCloseButton={showContactForm}
+              >
+                <ContactForm />
+              </ModalOverlay>
+            )}
+            <button onClick={setShowContactForm}>
+              contact-us@digitalforge-tek.com
+            </button>
           </span>
           <span>
             {" "}
@@ -387,9 +408,9 @@ export const TermsAndConditionsPage = () => {
         </p>
 
         <span className="policyParagraph c40">
-          <a href="mailto:contact-us@digitalforge-tek.com">
-            Contact-Us@digitalforge-tek.com
-          </a>
+          <button onClick={setShowContactForm}>
+            contact-us@digitalforge-tek.com
+          </button>
         </span>
         <span className="policyParagraph c0">
           If we ever grant you the permission to post, reproduce, or publicly
@@ -1725,12 +1746,13 @@ export const TermsAndConditionsPage = () => {
         <p>Phone: 8639490039</p>
         <p>
           <span>
-            <a href="mailto:contact-us@digitalforge-tek.com">
-              Contact-Us@digitalforge-tek.com
-            </a>
+            <button onClick={setShowContactForm}>
+              contact-us@digitalforge-tek.com
+            </button>
           </span>
         </p>
       </div>
+      <Footer />
     </>
   );
 };
