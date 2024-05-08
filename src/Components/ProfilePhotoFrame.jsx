@@ -2,7 +2,7 @@
 
 import "./ProfilePhotoFrame.css";
 
-export const ProfilePhotoFrame = ({ photo, name }) => {
+export const ProfilePhotoFrame = ({ photo, name, linkedin }) => {
   function tiltDiv(event) {
     const tiltStrength = 30; // Adjust this value to control the tilt strength
 
@@ -19,10 +19,12 @@ export const ProfilePhotoFrame = ({ photo, name }) => {
   }
   return (
     <div className="photo-frame" onMouseOver={tiltDiv}>
-      <div className="photo-ring">
-        <img src={photo} alt={name} className="profile-photo" />
-        <p className="profile-name">{name.toUpperCase()}</p>
-      </div>
+      <a href={linkedin}>
+        <div className="photo-ring">
+          <img src={photo} alt={`${name}-headshot`} className="profile-photo" />
+          <p className="profile-name">{name.toUpperCase()}</p>
+        </div>
+      </a>
     </div>
   );
 };

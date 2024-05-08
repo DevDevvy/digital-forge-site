@@ -10,7 +10,7 @@ export const cardData = {
         email: "randall@digitalforge-tek.com",
         twitter: "randalltmusic",
         company: "Digital Forge",
-        linkedin: "https://www.linkedin.com/in/randalltmusic/",
+        linkedin: "https://www.linkedin.com/in/randall-thomas-music/",
         photo: randallImage,
         phone: "(863) 949-0039",
         cell: "(909) 810-7236",

@@ -1,8 +1,13 @@
 import "./ParallaxHeroImage.css";
 
 import forge from "../../assets/DF-forge.png";
+import { Link } from "react-router-dom";
 
-const ParallaxHeroImage = ({ scrollToAbout, scrollToContact }) => {
+const ParallaxHeroImage = ({
+  scrollToAbout,
+  scrollToContact,
+  homepage = false,
+}) => {
   let lastKnownScrollPosition = 0;
   let ticking = false;
 
@@ -33,18 +38,26 @@ const ParallaxHeroImage = ({ scrollToAbout, scrollToContact }) => {
   return (
     <div className="parallax-container">
       <div className="spark-layer"></div>
-      <img className="hero-image" src={forge} />
+      <img className="hero-image" src={forge} alt="knight forging a sword" />
       <h1 id="tagline">
         Adapted Software Solutions <br></br>that Scale with You
       </h1>
-      <div className="navigation-links">
-        <button className="nav-button" onClick={scrollToAbout}>
-          About
-        </button>
-        <button className="nav-button" onClick={scrollToContact}>
-          Contact
-        </button>
-      </div>
+      {homepage ? (
+        <div className="navigation-links">
+          <button className="nav-button" onClick={scrollToAbout}>
+            About
+          </button>
+          <button className="nav-button" onClick={scrollToContact}>
+            Contact
+          </button>
+        </div>
+      ) : (
+        <div className="navigation-links">
+          <Link to="/" className="nav-button">
+            Home
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

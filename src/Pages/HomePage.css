@@ -40,6 +40,25 @@ label {
   display: block;
 }
 
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-right {
+  opacity: 0; /* Start invisible */
+  animation: slideInRight 0.5s forwards;
+}
+/* Ensure the element stays hidden until the animation triggers */
+.single-blog:not(.slide-in-right) {
+  visibility: hidden;
+}
+
 @media (max-width: 600px) {
   .photo-text-list {
     font-size: small;

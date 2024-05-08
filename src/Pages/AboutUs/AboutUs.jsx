@@ -4,6 +4,7 @@ import ModalOverlay from "../../Components/ModalOverlay";
 import logo from "../../assets/DF-Logo.png";
 import ProfilePhotoFrameGroup from "../../Components/ProfilePhotoFrameGroup";
 import ScrollingCarousel from "../../Components/ScrollingCarousel";
+import { useEffect, useRef, useState } from "react";
 
 const AboutUsPage = ({
   handleEmailButtonClick,
@@ -11,11 +12,36 @@ const AboutUsPage = ({
   showContactForm,
   isDarkMode,
 }) => {
+  const [fadeIn, setFadeIn] = useState(false);
+  const refSlide = useRef(null);
+  const [slideIn, setSlideIn] = useState(false);
+
+  useEffect(() => {
+    setFadeIn(true);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setSlideIn(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (refSlide.current) {
+      observer.observe(refSlide.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <div className="about-us">
         <div className={isDarkMode ? "content dark-mode-p" : "content"}>
-          <div className="content-box-1">
+          <div className={`content-box-1 ${fadeIn ? "fade-in" : ""}`}>
             <div>
               <img src={logo} id="df-logo-p" alt="Digital Forge Logo" />
             </div>
@@ -41,31 +67,33 @@ const AboutUsPage = ({
           <div className="content-box-2">
             <ProfilePhotoFrameGroup />
             <div className="mission-container">
-              <div className="paragraphs">
-                <h2>Our Mission:</h2>
-                <p>
-                  To provide high-quality, innovative, and secure solutions to
-                  businesses of all sizes. We believe that technology should be
-                  accessible to everyone, and we strive to make our solutions as
-                  user-friendly and accessible as possible. We are committed to
-                  providing our clients with the best possible service, and we
-                  work closely with them to ensure that our solutions meet their
-                  needs and are able to scale as needed.
+              <div id="mission-statement-div" className="paragraphs">
+                <h2 className="mission-statement">Our Mission:</h2>
+                <p className="mission-statement">
+                  Technology should be as user-friendly as possible and
+                  accessible to everyone. Digital Forge’s mission is to provide
+                  high quality, innovative, and secure solutions to businesses
+                  of all sizes. We maintain a firm commitment to clear and close
+                  communications with clients to ensure that our solutions not
+                  only meet current needs, but additionally can be scaled as
+                  necessary.
                 </p>
               </div>
               <ScrollingCarousel />
             </div>
           </div>
-          <div className="content-box-3">
-            <h2>Security and Development</h2>
-            <p>
-              We are an onshore, veteran owned operation ensuring data
-              sovereignty and peace of mind that offshore organizations just
-              can't give.
-              <br></br>
-              We pride ourselves on being security driven, always ensuring that
-              our solutions are secure and compliant with the latest standards.
-            </p>
+          <div
+            ref={refSlide}
+            className={`content-box-3 ${slideIn ? "slide-in-left" : ""}`}
+          >
+            <h2>Security & Development</h2>
+            <h3>
+              As a US based veteran owned operation, Digital Forge ensures a
+              degree of data sovereignty and peace of mind that offshore
+              organizations <br></br> simply cannot provide. We take pride in
+              consistent security driven solutions in compliance with current
+              and evolving standards.
+            </h3>
             <div className="two-column">
               <div id="list-container">
                 <h3>Our Focus:</h3>

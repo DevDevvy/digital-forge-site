@@ -2,8 +2,8 @@
   font-size: 5px;
   margin-top: 0.1em;
   position: fixed;
-  right: 4.5em;
-  top: 5.5em;
+  right: 1.5em;
+  top: 1.5em;
   margin-bottom: 1em;
   transition: 0.4s ease-in-out;
   z-index: 500;
@@ -12,12 +12,12 @@
 
 #digitalforge.open,
 body.menu-open #digitalforge {
-  color: #9b0f0f;
-  margin-top: 1em;
+  color: rgb(219, 226, 97);
   position: fixed;
-  right: 6.5em;
-  top: 1.5em;
-  font-size: 10px;
+  right: 1.5em;
+  text-shadow: 3px 2px 5px #dd741faf;
+  top: 10.8em;
+  font-size: 0.9em;
   transition: 0.8s ease-in-out;
   opacity: 1;
 }
@@ -60,39 +60,42 @@ body.menu-open #hamburger-icon div:nth-child(3),
 
 body.menu-open .nav,
 .nav.open {
-  color: rgb(235, 19, 19);
+  color: rgb(216, 235, 247);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   z-index: 100;
-  top: 1.5em;
-  right: -200px;
-  padding: 0 0.5em;
-  width: 4em;
   text-align: center;
   transition: top 0.8s ease-in-out;
+  text-decoration: none;
 }
 
 .nav:hover {
   cursor: pointer;
-  color: #d3eb37;
-  background-color: #3b151590;
   transform: scale(1.2);
 }
 
 #nav-menu-container {
   position: fixed;
-  top: 0;
+  top: 7em;
   left: 100%; /* Positioned off-screen to the right */
-  width: 250px; /* Adjust based on desired width */
-  height: 100%; /* Full viewport height */
+  width: auto; /* Adjust based on desired width */
   margin-top: 2.5em;
   transition: left 0.5s ease-in-out; /* Smooth transition for sliding in */
   z-index: 10; /* Ensure it's above other content */
   display: flex;
   flex-direction: column;
-  padding: 20px; /* Padding around links */
+  align-items: center;
+  border-radius: 20px 0 0 20px;
+  background-image: linear-gradient(
+    180deg,
+    #071531 0%,
+    #0c2c4b 50%,
+    #071531 100%
+  );
+  padding: 1em; /* Padding around links */
+  padding-top: 2em;
 }
 
 body.menu-open #nav-menu-container {
@@ -100,44 +103,9 @@ body.menu-open #nav-menu-container {
 }
 
 .nav {
-  width: 100%; /* Full width of the container */
   padding: 10px 0; /* Padding for better tap/click area */
   text-align: center; /* Center text */
-  margin-bottom: 10px; /* Spacing between items */
+  margin-bottom: 1em; /* Spacing between items */
   transition: background-color 0.3s ease; /* Smooth transition for hover */
-}
-
-.nav:hover {
-  cursor: pointer;
-  color: #d3eb37;
-  background-color: #3b151590;
-  transition: 0.5s ease;
-  transform: scale(1.2);
-  background-color: rgba(0, 0, 0, 0.1); /* Slight highlight on hover */
-}
-
-#nav-home.open {
-  display: block;
-  margin-top: 2em;
-  position: fixed;
-  right: 1.5em;
-  top: 1.5em;
-  font-size: 2em;
-}
-
-#nav-about.open {
-  display: block;
-  margin-top: 2em;
-  position: fixed;
-  right: 1.5em;
-  top: 3em;
-  font-size: 2em;
-}
-#nav-pay.open {
-  display: block;
-  margin-top: 2em;
-  position: fixed;
-  right: 1.5em;
-  top: 4.5em;
-  font-size: 2em;
+  border-bottom: 1px solid #d3eb37;
 }
